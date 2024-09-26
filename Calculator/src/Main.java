@@ -87,7 +87,7 @@ public class Main {
                     clearScreen();
                     // Displaying the calculator information
                     System.out.println(border);
-                    System.out.println("Scientific Calculator");
+                    System.out.println("\t\t\t\t\t\tScientific Calculator");
                     System.out.println(border);
                     System.out.println("Ans: " + (mAns != null ? mAns : "No answer"));
                     System.out.println("Last operation: " + mOperation);
@@ -123,22 +123,27 @@ public class Main {
 
                     switch (mOperation.toLowerCase()) {
                         case "add":
+                        case "+":
                             mResult = Add();
                             mEquation = mAns + " + " + mNumber;
                             break;
                         case "subtract":
+                        case "-":
                             mResult = Subtract();
                             mEquation = mAns + " - " + mNumber;
                             break;
                         case "multiply":
+                        case "*":
                             mResult = Multiply();
                             mEquation = mAns + " * " + mNumber;
                             break;
                         case "divide":
+                        case "/":
                             mResult = Divide();
                             mEquation = mAns + " / " + mNumber;
                             break;
                         case "modulus":
+                        case "%":
                             mResult = Modulus();
                             mEquation = mAns + " % " + mNumber;
                             break;
@@ -147,6 +152,7 @@ public class Main {
                             mEquation = mAns + " ^ " + mNumber;
                             break;
                         case "square root":
+                        case "√":
                             mResult = SquareRoot();
                             mEquation = "√" + mAns; // Square root does not use mNumber
                             break;
