@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class Calculator {
     private static String border = "<===========================================================================>";
 
     public static void main(String[] args) {
