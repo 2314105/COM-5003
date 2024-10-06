@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class SwitchStatement {
@@ -29,3 +30,5 @@ public class SwitchStatement {
         scanner.close();
     }
 }
+
+
