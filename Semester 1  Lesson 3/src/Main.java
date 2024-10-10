@@ -32,5 +32,6 @@ public class Main {
         truck.displayInfo();
         truck.fuel();
         truck.loadCargo();
+        //test
     }
 }
