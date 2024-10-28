@@ -1,20 +1,22 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// Data class to encapsulate bank account details
+// The BankAccount class encapsulates all details and actions related to a single bank account.
+// Using a separate class for account details promotes code reuse and makes the code modular.
 class BankAccount {
     private String accountName;
     private String accountNumber;
     private double accountBalance;
 
-    // Constructor to initialize account details
+    // Constructor initializes account details upon object creation.
     public BankAccount(String name, String number, double balance) {
         this.accountName = name;
         this.accountNumber = number;
         this.accountBalance = balance;
     }
 
-    // Getters
+    // Getters provide controlled access to accountName and accountNumber.
+    // No setters are provided as these details shouldn't be modified once the account is created.
     public String getAccountName() {
         return accountName;
     }
@@ -23,14 +25,15 @@ class BankAccount {
         return accountNumber;
     }
 
-    // Method to view account information
+    // Displays account information in a formatted way, making it easier to read in the console.
     public void viewInformation() {
         System.out.printf("%-20s %-10s %s %n", "Name", "Number", "Balance");
         System.out.println("-".repeat(40));
         System.out.printf("%-20s %-10s $%.2f %n", accountName, accountNumber, accountBalance);
     }
 
-    // Method to deposit an amount
+    // Increases the account balance by a specified amount.
+    // The method includes input validation to ensure positive deposit amounts.
     public void deposit(double amount) {
         if (amount > 0) {
             accountBalance += amount;
@@ -41,7 +44,8 @@ class BankAccount {
         }
     }
 
-    // Method to withdraw an amount
+    // Decreases the account balance by a specified amount, with input validation.
+    // Ensures that the withdrawal doesn't exceed the current balance to prevent overdraft.
     public void withdraw(double amount) {
         if (amount > 0 && amount <= accountBalance) {
             accountBalance -= amount;
@@ -54,6 +58,7 @@ class BankAccount {
 }
 
 public class Main {
+    // The accounts ArrayList stores multiple BankAccount objects, allowing for management of multiple accounts.
     private static ArrayList<BankAccount> accounts = new ArrayList<>();
     private static Scanner sc = new Scanner(System.in);
 
@@ -67,6 +72,8 @@ public class Main {
                     + "Enter your choice: ");
             choice = sc.nextInt();
 
+            // Uses a switch statement to direct the program flow based on the user's choice.
+            // The main menu offers options to add an account, select an account, or exit.
             switch (choice) {
                 case 1 -> addAccount();
                 case 2 -> selectAccount();
@@ -75,10 +82,11 @@ public class Main {
             }
         } while (choice != 3);
 
-        sc.close(); // Close the scanner
+        sc.close(); // Closes the Scanner resource once the program is done.
     }
 
-    // Method to add a new account
+    // Prompts the user to enter details for a new bank account, creating a new BankAccount object.
+    // Adds the newly created BankAccount to the accounts ArrayList.
     private static void addAccount() {
         System.out.print("Enter account holder's name: ");
         String name = sc.next();
@@ -92,7 +100,8 @@ public class Main {
         System.out.println("Account added successfully!");
     }
 
-    // Method to select an account from the list
+    // Allows the user to choose an account from the accounts list to manage.
+    // Lists all available accounts by name and account number for easy selection.
     private static void selectAccount() {
         if (accounts.isEmpty()) {
             System.out.println("No accounts available. Please add an account first.");
@@ -113,7 +122,8 @@ public class Main {
         }
     }
 
-    // Method to manage a specific account
+    // Manages a specific account by offering the user options to view, deposit, or withdraw from the account.
+    // Uses a loop to keep the account menu open until the user chooses to return to the main menu.
     private static void manageAccount(BankAccount account) {
         int choice;
         do {
