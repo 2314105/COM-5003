@@ -1,22 +1,27 @@
-package JavaMySQLConnect;
-
-import java.sql.*; //Importing java.sql package
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class JavaMySQLConnect {
-
     public static void main(String[] args) {
         try {
             Connection connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/Schooldb",//url
-                    "root",//user
-                    "password1234");//password
-            System.out.println("Connected With the database successfully"); //Message after successful connection
+                    "jdbc:mysql://127.0.0.1:3306/SchoolDB",
+                    "root",
+                    "password1234"
+            );
 
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM students");
+
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("StudentName"));
+                System.out.println(resultSet.getString("StudentGrade"));
+            }
         } catch (SQLException e) {
-
-            System.out.println("Error while connecting to the database"); //Message if something goes wrong while conneting to the database
-
+            e.printStackTrace();
         }
     }
-
 }
