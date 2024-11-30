@@ -7,10 +7,12 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int choice;
 
+        /* Main menu loop for user interaction */
         do {
             System.out.println("\n1. Create Account \n2. Manage Account \n3. Exit \nEnter your choice: ");
             choice = sc.nextInt();
 
+            /* Switch for menu options */
             switch (choice) {
                 case 1 -> createAccount(accounts, sc);
                 case 2 -> manageAccount(accounts, sc);
@@ -20,6 +22,7 @@ public class Main {
         } while (choice != 3);
     }
 
+    /* Method to create a new bank account */
     public static void createAccount(ArrayList<BankAccount> accounts, Scanner sc) {
         System.out.print("Enter account holder's name: ");
         sc.nextLine(); // Consume newline
@@ -28,13 +31,18 @@ public class Main {
         String number = sc.next();
         System.out.print("Enter initial balance: ");
         double balance = sc.nextDouble();
+
+        /* Add the new account to the list */
         accounts.add(new BankAccount(name, number, balance));
         System.out.println("Account created successfully!");
     }
 
+    /* Method to manage an existing bank account */
     public static void manageAccount(ArrayList<BankAccount> accounts, Scanner sc) {
         System.out.print("Enter account number: ");
         String number = sc.next();
+
+        /* Find the account by number */
         BankAccount account = accounts.stream()
                 .filter(acc -> acc.getAccountNumber().equals(number))
                 .findFirst()
@@ -42,10 +50,13 @@ public class Main {
 
         if (account != null) {
             int choice;
+
+            /* Account management menu loop */
             do {
                 System.out.println("\n1. View Account \n2. Deposit \n3. Withdraw \n4. Exit \nEnter your choice: ");
                 choice = sc.nextInt();
 
+                /* Switch for account management options */
                 switch (choice) {
                     case 1 -> account.viewInformation();
                     case 2 -> account.deposit(sc);
@@ -65,6 +76,7 @@ class BankAccount {
     private String accountNumber;
     private double accountBalance;
 
+    /* Constructor to initialize a bank account */
     public BankAccount(String name, String number, double balance) {
         this.accountName = name;
         this.accountNumber = number;
@@ -79,6 +91,7 @@ class BankAccount {
         return accountNumber;
     }
 
+    /* Method to handle deposits */
     public void deposit(Scanner sc) {
         System.out.print("Enter deposit amount: ");
         int amount = sc.nextInt();
@@ -90,6 +103,7 @@ class BankAccount {
         }
     }
 
+    /* Method to handle withdrawals */
     public void withdraw(Scanner sc) {
         System.out.print("Enter withdrawal amount: ");
         int amount = sc.nextInt();
@@ -101,6 +115,7 @@ class BankAccount {
         }
     }
 
+    /* Method to display account information */
     public void viewInformation() {
         System.out.printf("Account: %s, Number: %s, Balance: $%.2f\n", accountName, accountNumber, accountBalance);
     }

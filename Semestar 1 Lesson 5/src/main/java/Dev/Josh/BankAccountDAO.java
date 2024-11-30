@@ -7,6 +7,7 @@ public class BankAccountDAO {
     private static final String USER = "sa";  // Default user
     private static final String PASSWORD = ""; // Default password
 
+    /* Method to create a new account in the database */
     public static void createAccount(BankAccount account) {
         String query = "INSERT INTO accounts (account_name, account_number, account_balance) VALUES (?, ?, ?)";
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -23,6 +24,7 @@ public class BankAccountDAO {
         }
     }
 
+    /* Method to retrieve an account from the database using the account number */
     public static BankAccount getAccount(String accountNumber) {
         String query = "SELECT * FROM accounts WHERE account_number = ?";
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -42,6 +44,7 @@ public class BankAccountDAO {
         return null;
     }
 
+    /* Method to update the account balance in the database */
     public static void updateAccount(BankAccount account) {
         String query = "UPDATE accounts SET account_balance = ? WHERE account_number = ?";
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);

@@ -4,16 +4,18 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Initialize the database
+        /* Initialize the database */
         DatabaseInitializer.initialize();
 
         Scanner sc = new Scanner(System.in);
         int choice;
 
+        /* Main menu loop for user interaction */
         do {
             System.out.println("\n1. Create Account \n2. Manage Account \n3. Exit \nEnter your choice: ");
             choice = sc.nextInt();
 
+            /* Switch for menu options */
             switch (choice) {
                 case 1 -> createAccount(sc);  // Creating a new account
                 case 2 -> manageAccount(sc);  // Managing an existing account
@@ -23,7 +25,7 @@ public class Main {
         } while (choice != 3);
     }
 
-    // Method to create a new account
+    /* Method to create a new account */
     public static void createAccount(Scanner sc) {
         System.out.print("Enter account holder's name: ");
         sc.nextLine(); // Consume newline
@@ -33,22 +35,27 @@ public class Main {
         System.out.print("Enter initial balance: ");
         double balance = sc.nextDouble();
 
+        /* Create a new BankAccount object and save it to the database */
         BankAccount account = new BankAccount(name, number, balance);
         BankAccountDAO.createAccount(account);  // Save the account to the database
     }
 
-    // Method to manage an existing account
+    /* Method to manage an existing account */
     public static void manageAccount(Scanner sc) {
         System.out.print("Enter account number: ");
         String number = sc.next();
 
-        BankAccount account = BankAccountDAO.getAccount(number);  // Fetch the account from DB
+        /* Fetch the account from the database */
+        BankAccount account = BankAccountDAO.getAccount(number);
         if (account != null) {
             int choice;
+
+            /* Account management menu loop */
             do {
                 System.out.println("\n1. View Account \n2. Deposit \n3. Withdraw \n4. Exit \nEnter your choice: ");
                 choice = sc.nextInt();
 
+                /* Switch for account management options */
                 switch (choice) {
                     case 1 -> account.viewInformation();  // View account info
                     case 2 -> {

@@ -20,15 +20,12 @@ public class PostSessionTask2 {
         public int getId() {
             return id;
         }
-
         public String getName() {
             return name;
         }
-
         public String getPosition() {
             return position;
         }
-
         public double getSalary() {
             return salary;
         }
@@ -37,15 +34,12 @@ public class PostSessionTask2 {
         public void setId(int id) {
             this.id = id;
         }
-
         public void setName(String name) {
             this.name = name;
         }
-
         public void setPosition(String position) {
             this.position = position;
         }
-
         public void setSalary(double salary) {
             this.salary = salary;
         }
