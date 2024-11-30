@@ -1,6 +1,5 @@
-package dev.josh;
-
-public class PasswordValidator {
+//package example.org;
+public class Main {
 
     /**
      Validates the password based on specified rules:

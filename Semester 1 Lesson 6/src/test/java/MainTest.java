@@ -1,12 +1,12 @@
-package dev.josh;
+//package example.org;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class PasswordValidatorTest {
+public class MainTest {
 
-    private final PasswordValidator validator = new PasswordValidator();
+    private final Main validator = new Main();
 
     // Tests valid passwords that meet all criteria
     @Test
