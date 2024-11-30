@@ -1,17 +1,15 @@
-
 import java.util.Scanner;
 
 public class SwitchStatement {
-
     public static void main(String[] args) {
-        // Create a scanner object to read input
+        /*
+        Prompt the user to enter a number between 1 and 3,
+        use a switch statement to determine and print the corresponding day of the week,
+        or print "Invalid input" if the number is outside the range.
+         */
         Scanner scanner = new Scanner(System.in);
-
-        // Ask for user input
-        System.out.print("Enter a number ( 1 - 3 ): ");
+        System.out.print("Enter a number (1 - 3): ");
         int day = scanner.nextInt();
-
-        // Use a switch statement to determine the day of the week
         switch (day) {
             case 1:
                 System.out.println("Monday");
@@ -25,10 +23,6 @@ public class SwitchStatement {
             default:
                 System.out.println("Invalid input");
         }
-
-        // Close the scanner
         scanner.close();
     }
 }
-
-
