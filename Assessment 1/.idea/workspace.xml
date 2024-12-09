@@ -5,39 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa034449-2d95-4c63-8842-8e365e58288f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/GradeCalculatorApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/DataManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/DatabaseConnector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/MockDataLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Course.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/GradeCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/GradePredictionResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Module.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/CourseSelectorPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/GradeEntryPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/MainFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/ModeSelectorPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/ResultPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/DataManagerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/GradeCalculatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ui/MainFrameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/Module.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/ModuleManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/readingJsonFiles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/DirectL6EntryPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/FoundationPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/L5AndL6ModulesPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/MastersAwardPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/PostgraduateCertificatePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/PostgraduateDiplomaPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/SignInPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/courses.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gradeCalculator/GUI/GUIcourses.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gradeCalculator/GUI/GUImodules.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gradeCalculator/calculations/MethodA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gradeCalculator/calculations/MethodB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gradeCalculator/calculations/MethodC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gradeCalculator/calculations/MethodD.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gradeCalculator/database/Course.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gradeCalculator/database/Module.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gradeCalculator/calculations/MethodATEST.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gradeCalculator/calculations/MethodBTEST.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gradeCalculator/calculations/MethodCTEST.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gradeCalculator/calculations/MethodDTEST.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gradeCalculator/database/CourseTEST.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gradeCalculator/database/ModuleTEST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/GradeCalculatorApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/DataManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/DatabaseConnector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/MockDataLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Course.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/GradeCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/GradePredictionResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Module.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/CourseSelectorPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/GradeEntryPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/ModeSelectorPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/ResultPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/DataManagerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/GradeCalculatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui/MainFrameTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,10 +50,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2pt7W3a2VtXTzRY80JpTuXz5rVw" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -66,6 +62,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.GradeCalculatorApp.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.MainFrame.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -75,9 +73,17 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ui" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -94,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1733573546014</updated>
-      <workItem from="1733573547229" duration="3110000" />
+      <workItem from="1733573547229" duration="9386000" />
     </task>
     <servers />
   </component>
