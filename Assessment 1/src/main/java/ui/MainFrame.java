@@ -4,25 +4,15 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainFrame extends JFrame {
-
     private CardLayout cardLayout;
     private JPanel cardPanel;
 
     // Constructor for MainFrame
     public MainFrame() {
-        // Set title of the frame
         setTitle("Grade Calculator");
-
-        // Set size of the frame
         setSize(1200, 800);
-
-        // Disable resizing of the frame
         setResizable(false);
-
-        // Set default close operation
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Set layout for the frame
         setLayout(new BorderLayout());
 
         // Create the navigation panel on the left
@@ -76,8 +66,6 @@ public class MainFrame extends JFrame {
             }
             navPanel.add(button);
         }
-
-        // Set panel size and other visual adjustments if needed
         navPanel.setPreferredSize(new Dimension(200, 800));
         return navPanel;
     }

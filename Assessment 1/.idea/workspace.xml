@@ -5,35 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa034449-2d95-4c63-8842-8e365e58288f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/Module.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/ModuleManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/readingJsonFiles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/DirectL6EntryPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/FoundationPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/L5AndL6ModulesPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/MastersAwardPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/PostgraduateCertificatePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/PostgraduateDiplomaPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/SignInPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/courses.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/DirectL6EntryCalculation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/L5AndL6ModulesCalculation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/GradeCalculatorApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/DataManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/DatabaseConnector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/MockDataLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Course.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/GradeCalculator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/GradePredictionResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Module.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/CourseSelectorPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/GradeEntryPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/DirectL6EntryPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/DirectL6EntryPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/ModeSelectorPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/ResultPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/DataManagerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/GradeCalculatorTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui/MainFrameTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,5 +82,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
