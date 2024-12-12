@@ -8,7 +8,7 @@ public class Banner extends JLabel {
         super(text, SwingConstants.CENTER);  // Set the initial text and alignment
 
         // Set the banner properties
-        setFont(new Font("Arial", Font.BOLD, 24));
+        setFont(new Font("Arial", Font.BOLD, 34));
         setOpaque(true);
         setBackground(Color.decode("#391E22"));  // Dark color for the banner
         setForeground(Color.WHITE);  // White text

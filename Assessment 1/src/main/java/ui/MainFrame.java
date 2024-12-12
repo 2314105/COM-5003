@@ -22,19 +22,20 @@ public class MainFrame extends JFrame {
 
         // Create the Navbar and add it to the frame with absolute position
         Navbar navbar = new Navbar(this);  // Pass the MainFrame instance
-        navbar.setPreferredSize(new Dimension(150, 800)); // Set navbar height to match the frame height
-        navbar.setBounds(0, 0, 150, getHeight()); // Position navbar at (0,0) with width 150 and full height
+        navbar.setPreferredSize(new Dimension(155, 800)); // Set navbar height to match the frame height
+        navbar.setMaximumSize(new Dimension(155, 800)); // Prevent the navbar from resizing
+        navbar.setBounds(0, 0, 155, getHeight()); // Position navbar at (0,0) with width 155px and full height
         add(navbar);
 
         // Create the banner (top section of the frame) using the Banner class
         banner = new Banner("Sign In");
-        banner.setBounds(150, 0, 1050, 50); // Place banner to the right of navbar, and at the top of the frame
+        banner.setBounds(155, 0, 1050, 75); // Place banner to the right of navbar, and at the top of the frame
         add(banner);
 
         // Create a main panel for the content area (center part of the frame)
         mainPanel = new JPanel(new BorderLayout()); // Use BorderLayout for proper resizing
         mainPanel.setBackground(Color.WHITE);  // Set a white background for the main content
-        mainPanel.setBounds(150, 50, 1050, 750); // Position main panel below the banner
+        mainPanel.setBounds(155, 50, 1050, 750); // Position main panel below the banner
         add(mainPanel);
 
         // Initially show the SignInPanel

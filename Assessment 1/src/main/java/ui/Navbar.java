@@ -139,7 +139,9 @@ public class Navbar extends JPanel {
         // Optional: Set the background color of the navbar
         setBackground(Color.decode("#391E22"));
 
-        // Set the preferred size for the Navbar to prevent it from expanding beyond the frame
-        setPreferredSize(new Dimension(150, 800)); // Fixed width (150px) and height (800px)
+        // Set the fixed size for Navbar and prevent resizing
+        setPreferredSize(new Dimension(155, 800)); // Fixed width (155px) and height (800px)
+        setMaximumSize(new Dimension(155, 800)); // Prevent the panel from being resized
+        setMinimumSize(new Dimension(155, 800));
     }
 }
