@@ -3,9 +3,9 @@ package ui;
 import javax.swing.*;
 import java.awt.*;
 
-public class PostgraduateCertificatePanel extends JPanel {
+public class DirectL6Panel extends JPanel {
 
-    public PostgraduateCertificatePanel() {
+    public DirectL6Panel() {
         setLayout(new BorderLayout());
 
         JPanel middlePanel = new JPanel();
@@ -17,8 +17,8 @@ public class PostgraduateCertificatePanel extends JPanel {
         gbc.gridx = 0;
         gbc.insets = new Insets(5, 10, 5, 10);
 
-        // Use Table with 4 rows
-        Table inputFieldsPanel = new Table(4); // Dynamic row count
+        // Use Table with 7 rows
+        Table inputFieldsPanel = new Table(7); // Dynamic row count
         gbc.gridy = 1;
         middlePanel.add(inputFieldsPanel, gbc);
 
