@@ -13,17 +13,20 @@ public class Footer extends JPanel {
         setBackground(Color.decode("#391E22"));
         setBorder(BorderFactory.createEmptyBorder(5, 15, 30, 15));
 
-        // Results display
+        // Results display (non-scrollable version)
         resultsDisplay = new JTextArea(5, 20);
         resultsDisplay.setEditable(false);
         resultsDisplay.setFont(new Font("Arial", Font.PLAIN, 20));
         resultsDisplay.setBackground(Color.white);
         resultsDisplay.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        JScrollPane scrollPane = new JScrollPane(resultsDisplay);
-        scrollPane.setPreferredSize(new Dimension(450, 125));
+
+        // Add padding inside the JTextArea
+        resultsDisplay.setMargin(new Insets(10, 10, 10, 10)); // Top, left, bottom, right padding
+
+        // Directly add the JTextArea to the displayPanel without a JScrollPane
         JPanel displayPanel = new JPanel(new BorderLayout());
         displayPanel.setBackground(Color.decode("#391E22"));
-        displayPanel.add(scrollPane, BorderLayout.CENTER);
+        displayPanel.add(resultsDisplay, BorderLayout.CENTER); // No scroll pane
         add(displayPanel, BorderLayout.WEST);
 
         // Buttons
@@ -34,15 +37,15 @@ public class Footer extends JPanel {
         calculateButton = new JButton("Calculate");
         calculateButton.setFont(new Font("Arial", Font.BOLD, 20));
         calculateButton.setPreferredSize(new Dimension(160, 160));
-        calculateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); // Set cursor
+        calculateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); // Set cursor for calculate button
         buttonPanel.add(calculateButton);
 
         // Clear Button
         clearButton = new JButton("Clear");
         clearButton.setFont(new Font("Arial", Font.BOLD, 20));
         clearButton.setPreferredSize(new Dimension(160, 160));
+        clearButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); // Set cursor for clear button
         clearButton.addActionListener(e -> clearFields(inputFieldsPanel));
-        calculateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         buttonPanel.add(clearButton);
 
         add(buttonPanel, BorderLayout.EAST);
