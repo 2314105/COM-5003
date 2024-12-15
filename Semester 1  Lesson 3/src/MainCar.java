@@ -1,4 +1,4 @@
-public class Main {
+public class MainCar {
     public static void main(String[] args) {
         // Create an array of Animal objects
         Animal[] animals = new Animal[3];
