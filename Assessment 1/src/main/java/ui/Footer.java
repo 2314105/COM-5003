@@ -16,7 +16,7 @@ public class Footer extends JPanel {
         // Results display
         resultsDisplay = new JTextArea(5, 20);
         resultsDisplay.setEditable(false);
-        resultsDisplay.setFont(new Font("Arial", Font.PLAIN, 14));
+        resultsDisplay.setFont(new Font("Arial", Font.PLAIN, 20));
         resultsDisplay.setBackground(Color.white);
         resultsDisplay.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         JScrollPane scrollPane = new JScrollPane(resultsDisplay);
@@ -32,16 +32,17 @@ public class Footer extends JPanel {
 
         // Calculate Button
         calculateButton = new JButton("Calculate");
-        calculateButton.setFont(new Font("Arial", Font.BOLD, 16));
+        calculateButton.setFont(new Font("Arial", Font.BOLD, 20));
         calculateButton.setPreferredSize(new Dimension(160, 160));
         calculateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); // Set cursor
         buttonPanel.add(calculateButton);
 
         // Clear Button
         clearButton = new JButton("Clear");
-        clearButton.setFont(new Font("Arial", Font.BOLD, 16));
+        clearButton.setFont(new Font("Arial", Font.BOLD, 20));
         clearButton.setPreferredSize(new Dimension(160, 160));
         clearButton.addActionListener(e -> clearFields(inputFieldsPanel));
+        calculateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         buttonPanel.add(clearButton);
 
         add(buttonPanel, BorderLayout.EAST);

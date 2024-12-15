@@ -4,51 +4,78 @@ import java.util.List;
 
 public class DirectLevel6Calculator {
 
-    // Method C
+    // Classification thresholds
+    private static final double FIRST_CLASS_THRESHOLD = 69.50;
+    private static final double UPPER_SECOND_THRESHOLD = 59.50;
+    private static final double LOWER_SECOND_THRESHOLD = 49.50;
+    private static final double THIRD_CLASS_THRESHOLD = 39.50;
+
+    // Calculate weighted average for Level 6
     public static double calculateL6Average(List<Module> modules) {
         double weightedSum = 0;
         int totalCredits = 0;
 
         for (Module module : modules) {
-            weightedSum += module.getCredits() * module.getMarks(); // Updated to getMarks()
-            totalCredits += module.getCredits();
+            int credits = module.getCredits();
+            double marks = module.getMarks();
+            weightedSum += credits * marks;
+            totalCredits += credits;
         }
 
-        return totalCredits > 0 ? Math.round((weightedSum / totalCredits) * 10.0) / 10.0 : 0; // Rounded to 1 decimal place
+        if (totalCredits == 0) {
+            return 0;
+        }
+
+        double average = weightedSum / totalCredits;
+        return Math.round(average * 100.0) / 100.0; // Rounded to two decimal places
     }
 
-    // Method D
-    public static String calculateL6Profiling(List<Module> modules) {
-        int credits1st = 0;
-        int credits21 = 0;
-        int credits22 = 0;
-        int credits3rd = 0;
-        int creditsFail = 0;
-        int totalCredits = 0;
+    // Calculate profile classification based on credit distribution
+    public static String calculateProfileClassification(List<Module> modules) {
+        int totalCredits = modules.stream().mapToInt(Module::getCredits).sum();
 
-        for (Module module : modules) {
-            double mark = module.getMarks(); // Updated to getMarks()
-            int credits = module.getCredits();
-            totalCredits += credits;
+        int creditsFirstClass = getCreditsByClassification(modules, FIRST_CLASS_THRESHOLD, Double.MAX_VALUE);
+        int creditsUpperSecond = getCreditsByClassification(modules, UPPER_SECOND_THRESHOLD, FIRST_CLASS_THRESHOLD);
+        int creditsLowerSecond = getCreditsByClassification(modules, LOWER_SECOND_THRESHOLD, UPPER_SECOND_THRESHOLD);
+        int creditsThirdClass = getCreditsByClassification(modules, THIRD_CLASS_THRESHOLD, LOWER_SECOND_THRESHOLD);
 
-            if (mark >= 69.50) {
-                credits1st += credits;
-            } else if (mark >= 59.50) {
-                credits21 += credits;
-            } else if (mark >= 49.50) {
-                credits22 += credits;
-            } else if (mark >= 39.50) {
-                credits3rd += credits;
-            } else {
-                creditsFail += credits;
-            }
-        }
-
-        if (credits1st >= totalCredits / 2) return "1st";
-        if (credits21 >= totalCredits / 2) return "2:1";
-        if (credits22 >= totalCredits / 2) return "2:2";
-        if (credits3rd >= totalCredits / 2) return "3rd";
+        if (creditsFirstClass >= totalCredits / 2) return "1st";
+        if (creditsUpperSecond >= totalCredits / 2) return "2:1";
+        if (creditsLowerSecond >= totalCredits / 2) return "2:2";
+        if (creditsThirdClass >= totalCredits / 2) return "3rd";
 
         return "Fail";
+    }
+
+    // Calculate final classification for the student
+    public static String calculateFinalClassification(List<Module> modules) {
+        double average = calculateL6Average(modules);
+        String profileClassification = calculateProfileClassification(modules);
+
+        String finalClassification;
+        if (average >= FIRST_CLASS_THRESHOLD) {
+            finalClassification = "1st";
+        } else if (average >= UPPER_SECOND_THRESHOLD) {
+            finalClassification = "2:1";
+        } else if (average >= LOWER_SECOND_THRESHOLD) {
+            finalClassification = "2:2";
+        } else if (average >= THIRD_CLASS_THRESHOLD) {
+            finalClassification = "3rd";
+        } else {
+            finalClassification = "Fail";
+        }
+
+        return String.format(
+                "Average: %.2f\n\nClassification: %s\n\nProfile Classification: %s",
+                average, finalClassification, profileClassification
+        );
+    }
+
+    // Helper method to calculate credits by classification range
+    private static int getCreditsByClassification(List<Module> modules, double lowerBound, double upperBound) {
+        return modules.stream()
+                .filter(module -> module.getMarks() >= lowerBound && module.getMarks() < upperBound)
+                .mapToInt(Module::getCredits)
+                .sum();
     }
 }

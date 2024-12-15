@@ -9,79 +9,92 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DirectL6Panel extends JPanel {
-    private Table inputFieldsPanel; // Table for input fields
-    private Footer footer;         // Footer for displaying results
+
+    // Constants for design
+    private static final Color BACKGROUND_COLOR = Color.LIGHT_GRAY;
+
+    private Table inputFieldsPanel; // Input fields panel
+    private Footer footer;         // Footer panel to display results
 
     public DirectL6Panel() {
         setLayout(new BorderLayout());
-
-        JPanel middlePanel = new JPanel();
-        middlePanel.setLayout(new GridBagLayout());
-        middlePanel.setBackground(Color.LIGHT_GRAY);
-        middlePanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
-
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.insets = new Insets(5, 10, 5, 10);
-
-        // Use Table with 7 rows
-        inputFieldsPanel = new Table(7); // Dynamic row count
-        gbc.gridy = 1;
-        middlePanel.add(inputFieldsPanel, gbc);
-
-        // Create Footer panel and connect buttons to actions
-        footer = new Footer(inputFieldsPanel);
-
-        // Add button listeners for the specific panel
-        addPanelSpecificListeners();
-
-        add(footer, BorderLayout.SOUTH);  // Add the footer to the bottom of the panel
-        add(middlePanel, BorderLayout.CENTER);
-
-        // Revalidate the layout to make sure it updates properly
+        initializeComponents(); // Initialize UI components
+        setupListeners();       // Set up action listeners
         revalidate();
         repaint();
     }
 
-    // Add listeners for panel-specific actions
-    private void addPanelSpecificListeners() {
-        JButton calculateButton = footer.getCalculateButton();
-        calculateButton.addActionListener(e -> calculateAndDisplayResults());
+    // Initializes the middle panel and major components
+    private void initializeComponents() {
+        JPanel middlePanel = initializeMiddlePanel(); // Create and configure a middle panel
+        inputFieldsPanel = new Table(7);              // Create inputFieldsPanel dynamically
+        middlePanel.add(inputFieldsPanel, getGridBagConstraints(1));
+
+        footer = new Footer(inputFieldsPanel);        // Initialize footer
+        add(middlePanel, BorderLayout.CENTER);        // Add components to respective layout positions
+        add(footer, BorderLayout.SOUTH);
     }
 
-    // Perform calculation and update the footer results display
-    private void calculateAndDisplayResults() {
-        List<Module> modules = new ArrayList<>();
-        Component[] components = inputFieldsPanel.getComponents();
+    // Sets up the middle panel
+    private JPanel initializeMiddlePanel() {
+        JPanel middlePanel = new JPanel(new GridBagLayout());
+        middlePanel.setBackground(BACKGROUND_COLOR);
+        middlePanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        return middlePanel;
+    }
 
-        // Start from the second row (index 3), and process every group of 3 fields
-        for (int i = 3; i < components.length; i += 3) {
-            try {
-                // The first field in the group is the module field (ignored here)
-                JTextField creditsField = (JTextField) components[i + 1];
-                JTextField marksField = (JTextField) components[i + 2];
+    // Configures grid constraints for layout
+    private GridBagConstraints getGridBagConstraints(int gridy) {
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = gridy;
+        gbc.insets = new Insets(5, 10, 5, 10);
+        return gbc;
+    }
 
-                int credits = Integer.parseInt(creditsField.getText().trim());
-                double marks = Double.parseDouble(marksField.getText().trim());
+    // Configures listeners for panel-specific actions
+    private void setupListeners() {
+        footer.getCalculateButton().addActionListener(e -> processAndDisplayResults());
+    }
 
-                modules.add(new Module("Module" + (modules.size() + 1), credits, marks));
-            } catch (NumberFormatException | ClassCastException ex) {
-                footer.updateResults("Error: Please ensure all credits and marks fields are filled correctly.");
-                return;
-            }
-        }
+    // Handle calculations and result updates
+    private void processAndDisplayResults() {
+        List<Module> modules = extractModulesFromFields();
 
         if (modules.isEmpty()) {
             footer.updateResults("Error: No valid modules provided.");
             return;
         }
 
-        // Calculate results using the calculator
-        double average = DirectLevel6Calculator.calculateL6Average(modules);
-        String classification = DirectLevel6Calculator.calculateL6Profiling(modules);
+        // Direct calculations via DirectLevel6Calculator
+        String finalResults = DirectLevel6Calculator.calculateFinalClassification(modules);
 
-        // Update the footer with the results
-        String resultText = String.format("Level 6 Weighted Average: %.1f\nClassification: %s", average, classification);
-        footer.updateResults(resultText);
+        updateFooterResults(finalResults);
+    }
+
+    // Extract valid modules from the input table
+    private List<Module> extractModulesFromFields() {
+        List<Module> modules = new ArrayList<>();
+        Component[] components = inputFieldsPanel.getComponents();
+
+        for (int i = 3; i < components.length; i += 3) { // Process each set of fields (module, credits, marks)
+            try {
+                JTextField creditsField = (JTextField) components[i + 1];
+                JTextField marksField = (JTextField) components[i + 2];
+
+                int credits = Integer.parseInt(creditsField.getText().trim());
+                double marks = Double.parseDouble(marksField.getText().trim());
+                modules.add(new Module("Module" + (modules.size() + 1), credits, marks));
+            } catch (NumberFormatException ex) {
+                footer.updateResults("Error: Ensure credits and marks fields are filled correctly.");
+                return new ArrayList<>(); // Return empty, invalid modules
+            }
+        }
+        return modules;
+    }
+
+    // Display results in the footer
+    private void updateFooterResults(String finalResults) {
+        footer.updateResults(finalResults);
     }
 }
