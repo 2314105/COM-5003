@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de2eb6ec-233c-473d-aa01-82a4bd35e76d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/HelloWorldWithLoop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HelloWorldWithScanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="de2eb6ec-233c-473d-aa01-82a4bd35e76d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +45,7 @@
   "keyToString": {
     "Application.Calculator.executor": "Debug",
     "Application.HelloWorldWithLoop.executor": "Run",
+    "Application.HelloWorldWithScanner.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -85,7 +82,7 @@
       <workItem from="1731584346684" duration="140000" />
       <workItem from="1732193342992" duration="353000" />
       <workItem from="1732965978484" duration="99000" />
-      <workItem from="1734278288577" duration="1490000" />
+      <workItem from="1734278288577" duration="1660000" />
     </task>
     <servers />
   </component>

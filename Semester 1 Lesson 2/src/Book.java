@@ -1,12 +1,12 @@
 public class Book {
-    // Fields
+    // fields
     private String title;
     private String author;
     private String isbn;
     private double price;
     private int quantity;
 
-    // Constructor
+    // constructor
     public Book(String title, String author, String isbn, double price, int quantity) {
         this.title = title;
         this.author = author;
@@ -15,14 +15,28 @@ public class Book {
         this.quantity = quantity;
     }
 
-    // Read accessors (getters)
-    public String getTitle() { return title; }
-    public String getAuthor() { return author; }
-    public String getISBN() { return isbn; }
-    public double getPrice() { return price; }
-    public int getQuantity() { return quantity; }
+    // read accessors
+    public String getTitle() {
+        return title;
+    }
 
-    // Set accessors (setters)
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getISBN() {
+        return isbn;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    // set accessors
     public void setPrice(double price) {
         this.price = price;
     }
@@ -30,4 +44,4 @@ public class Book {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-}
+} // end of class
