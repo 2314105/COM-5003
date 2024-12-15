@@ -5,67 +5,94 @@ import java.awt.*;
 
 public class SignInPanel extends JPanel {
 
+    private static final String LOGO_PATH = "/LeedsTrinity.png";
+    private static final Dimension LOGO_DIMENSION = new Dimension(500, 250);
+    private static final Dimension FORM_DIMENSION = new Dimension(500, 200);
+    private static final Color BACKGROUND_COLOR = Color.LIGHT_GRAY;
+    private static final Color FORM_BACKGROUND_COLOR = Color.decode("#391E22");
+
     public SignInPanel() {
-        // Set the layout of the panel to BorderLayout
         setLayout(new BorderLayout());
+        add(createMiddlePanel(), BorderLayout.CENTER);
+        add(createFooterPanel(), BorderLayout.SOUTH);
+    }
 
-        // Create the middle section (3/6)
-        JPanel middlePanel = new JPanel();
-        middlePanel.setLayout(new GridBagLayout());
-        middlePanel.setBackground(Color.LIGHT_GRAY);
+    private JPanel createMiddlePanel() {
+        JPanel middlePanel = new JPanel(new GridBagLayout());
+        middlePanel.setBackground(BACKGROUND_COLOR);
 
-        // Load the logo image
-        ImageIcon image = new ImageIcon(getClass().getResource("/LeedsTrinity.png"));
-        JLabel logoLabel = new JLabel(image);
-        logoLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        logoLabel.setPreferredSize(new Dimension(500, 250));
-
-        // Create the sign-in form inside the middle section
-        JPanel formPanel = new JPanel();
-        formPanel.setLayout(new GridLayout(4, 1, 10, 10));
-        formPanel.setPreferredSize(new Dimension(500, 200));
-        formPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        formPanel.setBackground(Color.white);
-
-        // Username field
-        JTextField usernameField = new JTextField();
-        usernameField.setBorder(BorderFactory.createTitledBorder("Username"));
-        formPanel.add(usernameField);
-
-        // Password field
-        JPasswordField passwordField = new JPasswordField();
-        passwordField.setBorder(BorderFactory.createTitledBorder("Password"));
-        formPanel.add(passwordField);
-
-        // Sign In button
-        JButton signInButton = new JButton("Sign In");
-        formPanel.add(signInButton);
-
-        // Forgotten Password link
-        JLabel forgottenPasswordLabel = new JLabel("Forgotten Password?");
-        forgottenPasswordLabel.setForeground(Color.BLUE);
-        forgottenPasswordLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        forgottenPasswordLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        formPanel.add(forgottenPasswordLabel);
-
-        // Add the logo label above the form panel in the middle section
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
-        middlePanel.add(logoLabel, gbc); // Add logo above the form
 
-        // Add the form panel below the logo
+        // Add logo
+        middlePanel.add(createLogoLabel(), gbc);
+
+        // Add form panel
         gbc.gridy = 1;
-        middlePanel.add(formPanel, gbc);
+        middlePanel.add(createFormPanel(), gbc);
 
-        JPanel footerPanel = new JPanel();
-        footerPanel.setLayout(new FlowLayout(FlowLayout.RIGHT)); // Right-align the button in the footer
-        footerPanel.setBackground(Color.lightGray);
+        return middlePanel;
+    }
+
+    private JLabel createLogoLabel() {
+        ImageIcon logo = new ImageIcon(getClass().getResource(LOGO_PATH));
+        JLabel logoLabel = new JLabel(logo);
+        logoLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        logoLabel.setPreferredSize(LOGO_DIMENSION);
+        return logoLabel;
+    }
+
+    private JPanel createFormPanel() {
+        JPanel formPanel = new JPanel(new GridLayout(4, 1, 10, 10));
+        formPanel.setPreferredSize(FORM_DIMENSION);
+        formPanel.setBackground(FORM_BACKGROUND_COLOR);
+        formPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        // Username field
+        formPanel.add(createTitledTextField("Username"));
+
+        // Password field
+        formPanel.add(createTitledPasswordField("Password"));
+
+        // Sign In button
+        formPanel.add(createButton("Sign In"));
+
+        // Forgotten Password link
+        formPanel.add(createForgottenPasswordLabel());
+
+        return formPanel;
+    }
+
+    private JTextField createTitledTextField(String title) {
+        JTextField textField = new JTextField();
+        textField.setBorder(BorderFactory.createTitledBorder(title));
+        return textField;
+    }
+
+    private JPasswordField createTitledPasswordField(String title) {
+        JPasswordField passwordField = new JPasswordField();
+        passwordField.setBorder(BorderFactory.createTitledBorder(title));
+        return passwordField;
+    }
+
+    private JButton createButton(String text) {
+        return new JButton(text);
+    }
+
+    private JLabel createForgottenPasswordLabel() {
+        JLabel label = new JLabel("Forgotten Password?");
+        label.setForeground(Color.BLUE);
+        label.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        return label;
+    }
+
+    private JPanel createFooterPanel() {
+        JPanel footerPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        footerPanel.setBackground(BACKGROUND_COLOR);
         footerPanel.setPreferredSize(new Dimension(0, 175));
         footerPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-
-        // Add the middle section to the center of the SignInPanel
-        add(footerPanel, BorderLayout.SOUTH);
-        add(middlePanel, BorderLayout.CENTER);
+        return footerPanel;
     }
 }

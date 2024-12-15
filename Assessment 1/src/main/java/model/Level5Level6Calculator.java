@@ -75,7 +75,7 @@ public class Level5Level6Calculator {
     }
 
     // Helper method to determine classification based on mark
-    private String getClassification(double mark) {
+    protected String getClassification(double mark) {
         if (mark >= 70) {
             return "1st";
         } else if (mark >= 60) {
@@ -90,7 +90,7 @@ public class Level5Level6Calculator {
     }
 
     // Helper method to calculate profile mark classification based on the total credits in each classification
-    private String getProfileMarkClassification(List<Double> l5Marks, List<Integer> l5Credits, List<Double> l6Marks, List<Integer> l6Credits) {
+    protected String getProfileMarkClassification(List<Double> l5Marks, List<Integer> l5Credits, List<Double> l6Marks, List<Integer> l6Credits) {
         int totalCredits = 0;
         int higherClassCredits = 0;
 

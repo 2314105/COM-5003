@@ -11,6 +11,10 @@ public class Module {
         this.marks = marks;
     }
 
+    public String getName() {
+        return name;  // Add this getter for the 'name' field
+    }
+
     public int getCredits() {
         return credits;
     }
