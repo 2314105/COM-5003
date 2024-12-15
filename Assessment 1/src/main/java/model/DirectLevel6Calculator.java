@@ -66,7 +66,7 @@ public class DirectLevel6Calculator {
         }
 
         return String.format(
-                "Average: %.2f\n\nClassification: %s\n\nProfile Classification: %s",
+                "Average: %.2f\nClassification: %s\nProfile Classification: %s",
                 average, finalClassification, profileClassification
         );
     }

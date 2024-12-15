@@ -77,13 +77,13 @@ public class Level5Level6Calculator {
     // Helper method to determine classification based on mark
     private String getClassification(double mark) {
         if (mark >= 70) {
-            return "First Class";
+            return "1st";
         } else if (mark >= 60) {
             return "2:1";
         } else if (mark >= 50) {
             return "2:2";
         } else if (mark >= 40) {
-            return "Third Class";
+            return "3rd";
         } else {
             return "Fail";
         }
@@ -123,11 +123,12 @@ public class Level5Level6Calculator {
     // Method to format the results
     private String formatResults(double methodAResult, double methodBResult, String classificationA, String classificationB, String profileMarkClassification) {
         StringBuilder result = new StringBuilder();
-        result.append("Average 1 (Level 5 + Level 6): ").append(String.format("%.2f", methodAResult)).append("\n\n");
-        result.append("Average 2 (Level 5 + Level 6 x 2): ").append(String.format("%.2f", methodBResult)).append("\n\n");
-        result.append("Higher Average Mark: ").append(String.format("%.2f", Math.max(methodAResult, methodBResult))).append("\n\n");
+        result.append("Average 1 (Level 5 + Level 6): ").append(String.format("%.2f", methodAResult)).append("\n");
+        result.append("Average 2 (Level 5 + Level 6 x 2): ").append(String.format("%.2f", methodBResult)).append("\n");
+        result.append("Higher Average Mark: ").append(String.format("%.2f", Math.max(methodAResult, methodBResult))).append("\n");
+        result.append("Classification (Method A): ").append(classificationA).append("\n");
+        result.append("Classification (Method B): ").append(classificationB).append("\n");
         result.append("Profile Mark Classification: ").append(profileMarkClassification).append("\n");
-
         return result.toString();
     }
 }

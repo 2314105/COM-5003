@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa034449-2d95-4c63-8842-8e365e58288f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Level5Level6Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/DirectLevel6CalculatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/Level5Level6CalculatorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Footer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Footer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Level5Level6Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Level5Level6Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DirectLevel6Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DirectLevel6Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Level5Level6Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Level5Level6Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Banner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/FoundationPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/MastersAwardsPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/ModuleTablePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Navbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Navbar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/PostgraduateCertificatePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/PostgraduateDiplomaPanel.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +102,7 @@
       <workItem from="1734019396336" duration="15549000" />
       <workItem from="1734205530041" duration="4160000" />
       <workItem from="1734212641337" duration="126000" />
-      <workItem from="1734216190131" duration="16591000" />
+      <workItem from="1734216190131" duration="22994000" />
     </task>
     <servers />
   </component>
