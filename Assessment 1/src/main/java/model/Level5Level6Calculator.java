@@ -6,26 +6,8 @@ public class Level5Level6Calculator {
 
     // Method A: The average mark of all module marks achieved at Level 5 and Level 6
     public double calculateMethodA(List<Double> l5Marks, List<Integer> l5Credits, List<Double> l6Marks, List<Integer> l6Credits) {
-        double weightedL5Sum = 0;
-        double weightedL6Sum = 0;
-        int totalL5Credits = 0;
-        int totalL6Credits = 0;
-
-        // Calculate weighted sums and total credits for Level 5
-        for (int i = 0; i < l5Marks.size(); i++) {
-            weightedL5Sum += l5Marks.get(i) * l5Credits.get(i);
-            totalL5Credits += l5Credits.get(i);
-        }
-
-        // Calculate weighted sums and total credits for Level 6
-        for (int i = 0; i < l6Marks.size(); i++) {
-            weightedL6Sum += l6Marks.get(i) * l6Credits.get(i);
-            totalL6Credits += l6Credits.get(i);
-        }
-
-        // Calculate average for Level 5 and Level 6
-        double l5Average = weightedL5Sum / totalL5Credits;
-        double l6Average = weightedL6Sum / totalL6Credits;
+        double l5Average = calculateWeightedAverage(l5Marks, l5Credits);
+        double l6Average = calculateWeightedAverage(l6Marks, l6Credits);
 
         // Calculate overall average (Method A)
         return (l5Average + l6Average) / 2;
@@ -33,29 +15,26 @@ public class Level5Level6Calculator {
 
     // Method B: The average mark of all module marks achieved at Level 5 and Level 6, weighted 2:1 for Level 6
     public double calculateMethodB(List<Double> l5Marks, List<Integer> l5Credits, List<Double> l6Marks, List<Integer> l6Credits) {
-        double weightedL5Sum = 0;
-        double weightedL6Sum = 0;
-        int totalL5Credits = 0;
-        int totalL6Credits = 0;
-
-        // Calculate weighted sums and total credits for Level 5
-        for (int i = 0; i < l5Marks.size(); i++) {
-            weightedL5Sum += l5Marks.get(i) * l5Credits.get(i);
-            totalL5Credits += l5Credits.get(i);
-        }
-
-        // Calculate weighted sums and total credits for Level 6
-        for (int i = 0; i < l6Marks.size(); i++) {
-            weightedL6Sum += l6Marks.get(i) * l6Credits.get(i);
-            totalL6Credits += l6Credits.get(i);
-        }
-
-        // Calculate average for Level 5 and Level 6, weighted in favor of Level 6
-        double l5Average = weightedL5Sum / totalL5Credits;
-        double l6Average = weightedL6Sum / totalL6Credits;
+        double l5Average = calculateWeightedAverage(l5Marks, l5Credits);
+        double l6Average = calculateWeightedAverage(l6Marks, l6Credits);
 
         // Calculate overall average (Method B) with Level 6 weighted more
         return (l5Average + 2 * l6Average) / 3;
+    }
+
+    // Helper method to calculate the weighted average for marks and credits
+    private double calculateWeightedAverage(List<Double> marks, List<Integer> credits) {
+        double weightedSum = 0;
+        int totalCredits = 0;
+
+        // Calculate weighted sum and total credits
+        for (int i = 0; i < marks.size(); i++) {
+            weightedSum += marks.get(i) * credits.get(i);
+            totalCredits += credits.get(i);
+        }
+
+        // Return the weighted average
+        return weightedSum / totalCredits;
     }
 
     // Method D: Mark profiling methods A and B
@@ -126,8 +105,6 @@ public class Level5Level6Calculator {
         result.append("Average 1 (Level 5 + Level 6): ").append(String.format("%.2f", methodAResult)).append("\n");
         result.append("Average 2 (Level 5 + Level 6 x 2): ").append(String.format("%.2f", methodBResult)).append("\n");
         result.append("Higher Average Mark: ").append(String.format("%.2f", Math.max(methodAResult, methodBResult))).append("\n");
-        result.append("Classification (Method A): ").append(classificationA).append("\n");
-        result.append("Classification (Method B): ").append(classificationB).append("\n");
         result.append("Profile Mark Classification: ").append(profileMarkClassification).append("\n");
         return result.toString();
     }
