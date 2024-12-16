@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MainTest {
+public class ValidatePasswordTest {
 
-    private final Main validator = new Main();
+    private final ValidatePassword validator = new ValidatePassword();
 
     // Tests valid passwords that meet all criteria
     @Test

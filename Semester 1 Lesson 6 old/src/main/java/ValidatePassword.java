@@ -1,5 +1,5 @@
 //package example.org;
-public class Main {
+public class ValidatePassword {
 
     /**
      Validates the password based on specified rules:
