@@ -2,6 +2,9 @@ package ui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import model.DatabaseManager;
 
 public class Table extends JPanel {
 
@@ -12,6 +15,10 @@ public class Table extends JPanel {
     private static final Insets DEFAULT_INSETS = new Insets(5, 10, 5, 10);
     private static final Dimension MODULE_FIELD_SIZE = new Dimension(150, 30);
     private static final Dimension CREDITS_MARKS_FIELD_SIZE = new Dimension(100, 30);
+
+    // Fields to store JTextFields for modules and credits
+    private JTextField[] moduleFields;
+    private JTextField[] creditFields;
 
     public Table(int rowCount) {
         initializePanelProperties();
@@ -46,11 +53,41 @@ public class Table extends JPanel {
     }
 
     private void initializeInputFields(int rowCount, GridBagConstraints gridConstraints) {
+        moduleFields = new JTextField[rowCount];
+        creditFields = new JTextField[rowCount];
+
         for (int i = 0; i < rowCount; i++) {
             gridConstraints.gridy = i + 1;
 
-            add(createTextField(MODULE_FIELD_SIZE), updateConstraints(gridConstraints, 0));
-            add(createTextField(CREDITS_MARKS_FIELD_SIZE), updateConstraints(gridConstraints, 1));
+            // Create and add module code field
+            moduleFields[i] = createTextField(MODULE_FIELD_SIZE);
+            int index = i;
+
+            // Add a DocumentListener for real-time updates
+            moduleFields[index].getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
+                @Override
+                public void insertUpdate(javax.swing.event.DocumentEvent e) {
+                    updateCredits(index); // Trigger on text insert
+                }
+
+                @Override
+                public void removeUpdate(javax.swing.event.DocumentEvent e) {
+                    updateCredits(index); // Trigger on text removal
+                }
+
+                @Override
+                public void changedUpdate(javax.swing.event.DocumentEvent e) {
+                    updateCredits(index); // Trigger on style changes (rare for plain text)
+                }
+            });
+
+            add(moduleFields[i], updateConstraints(gridConstraints, 0));
+
+            // Create and add credits field (read-only)
+            creditFields[i] = createTextField(CREDITS_MARKS_FIELD_SIZE);
+            add(creditFields[i], updateConstraints(gridConstraints, 1));
+
+            // Create and add marks field (the user will fill it out)
             add(createTextField(CREDITS_MARKS_FIELD_SIZE), updateConstraints(gridConstraints, 2));
         }
     }
@@ -65,5 +102,20 @@ public class Table extends JPanel {
         GridBagConstraints updatedConstraints = (GridBagConstraints) gridConstraints.clone();
         updatedConstraints.gridx = gridx;
         return updatedConstraints;
+    }
+
+    // Method to update credits based on the module code entered
+    private void updateCredits(int rowIndex) {
+        String moduleCode = moduleFields[rowIndex].getText().trim();
+        if (!moduleCode.isEmpty()) {
+            int credits = DatabaseManager.getCreditsForModule(moduleCode);
+            if (credits != -1) {
+                creditFields[rowIndex].setText(String.valueOf(credits));
+            } else {
+                creditFields[rowIndex].setText("Not found");
+            }
+        } else {
+            creditFields[rowIndex].setText(""); // Clear credits if no module code
+        }
     }
 }

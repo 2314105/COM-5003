@@ -72,7 +72,6 @@ public class DirectL6Panel extends JPanel {
         updateFooterResults(finalResults);
     }
 
-    // Extract valid modules from the input table
     private List<Module> extractModulesFromFields() {
         List<Module> modules = new ArrayList<>();
         Component[] components = inputFieldsPanel.getComponents();
@@ -82,14 +81,26 @@ public class DirectL6Panel extends JPanel {
                 JTextField creditsField = (JTextField) components[i + 1];
                 JTextField marksField = (JTextField) components[i + 2];
 
-                int credits = Integer.parseInt(creditsField.getText().trim());
-                double marks = Double.parseDouble(marksField.getText().trim());
+                String creditsText = creditsField.getText().trim();
+                String marksText = marksField.getText().trim();
+
+                // Skip rows with empty fields
+                if (creditsText.isEmpty() || marksText.isEmpty()) {
+                    continue; // Skip this row and move to the next one
+                }
+
+                int credits = Integer.parseInt(creditsText);
+                double marks = Double.parseDouble(marksText);
+
+                // Add valid module
                 modules.add(new Module("Module" + (modules.size() + 1), credits, marks));
             } catch (NumberFormatException ex) {
+                // Handle invalid data in the fields
                 footer.updateResults("Error: Ensure credits and marks fields are filled correctly.");
-                return new ArrayList<>(); // Return empty, invalid modules
+                return new ArrayList<>(); // Return empty list if there's an error
             }
         }
+
         return modules;
     }
 
