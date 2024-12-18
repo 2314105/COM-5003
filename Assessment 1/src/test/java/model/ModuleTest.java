@@ -1,6 +1,7 @@
 package model;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ModuleTest {
@@ -9,19 +10,19 @@ public class ModuleTest {
     @Test
     public void testModuleConstructorAndGetters() {
         // Create a Module instance
-        Module module = new Module("Computer Science", 120, 85.5);
+        Module module = new Module("5COM5015", 120, 85.5);
 
-        // Assert the name, credits, and marks are initialized correctly
-        assertEquals("Computer Science", module.getName());  // Replace with a getter for name if needed
+        // Assert the code, credits, and marks are initialized correctly
+        assertEquals("5COM5015", module.getCode());  // Replace with getCode() since getName() was removed
         assertEquals(120, module.getCredits());
         assertEquals(85.5, module.getMarks(), 0.001);  // Allow for a small margin of error with doubles
     }
 
-    // Test for getter when credits are zero
+    // Test for a module with zero credits
     @Test
     public void testModuleWithZeroCredits() {
         // Create a module with zero credits
-        Module module = new Module("Mathematics", 0, 75.0);
+        Module module = new Module("5COM5020", 0, 75.0);
 
         // Assert the credits and marks
         assertEquals(0, module.getCredits());
@@ -32,11 +33,11 @@ public class ModuleTest {
     @Test
     public void testModuleWithEdgeCaseMarks() {
         // Create a module with 0 marks
-        Module module = new Module("History", 60, 0.0);
+        Module module = new Module("5COM5030", 60, 0.0);
         assertEquals(0.0, module.getMarks(), 0.001);
 
         // Create a module with 100 marks
-        module = new Module("Physics", 60, 100.0);
+        module = new Module("5COM5040", 60, 100.0);
         assertEquals(100.0, module.getMarks(), 0.001);
     }
 }

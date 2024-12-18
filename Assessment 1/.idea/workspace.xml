@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa034449-2d95-4c63-8842-8e365e58288f" name="Changes" comment="" />
+    <list default="true" id="aa034449-2d95-4c63-8842-8e365e58288f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Validator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/ValidatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Module.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/DirectL6Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/DirectL6Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Level5Level6Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Level5Level6Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/ModuleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ModuleTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +44,7 @@
     "Application.GradeCalculatorApp.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.MainFrame.executor": "Run",
+    "JUnit.AverageCalculatorTest.executor": "Run",
     "JUnit.DatabaseManagerTest.executor": "Run",
     "JUnit.DirectLevel6CalculatorTest.executor": "Run",
     "JUnit.DirectLevel6CalculatorTest.testStudentDClassification.executor": "Run",
@@ -42,8 +52,11 @@
     "JUnit.Level5Level6CalculatorTest.executor": "Run",
     "JUnit.Level5Level6CalculatorTest.testScenario1.executor": "Run",
     "JUnit.Level5Level6CalculatorTest.testScenario3.executor": "Run",
+    "JUnit.MarkClassifierTest.executor": "Run",
     "JUnit.ModuleTest.executor": "Run",
     "JUnit.TableTest.executor": "Run",
+    "JUnit.ValidatorTest (1).executor": "Run",
+    "JUnit.ValidatorTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
@@ -74,64 +87,10 @@
       <recent name="ui" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MarkClassifierTest">
-    <configuration name="AverageCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ValidatorTest (1)">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Assessment-1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.AverageCalculatorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DirectLevel6CalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assessment-1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.DirectLevel6CalculatorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DirectLevel6CalculatorTest.testStudentEClassification" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assessment-1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.DirectLevel6CalculatorTest" />
-      <option name="METHOD_NAME" value="testStudentEClassification" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Level5Level6CalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assessment-1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.Level5Level6CalculatorTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -151,13 +110,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ModuleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assessment-1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.ModuleTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidatorTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assessment-1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.ValidatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assessment-1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ValidatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ValidatorTest (1)" />
+        <item itemvalue="JUnit.ValidatorTest" />
+        <item itemvalue="JUnit.ModuleTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.MarkClassifierTest" />
-        <item itemvalue="JUnit.AverageCalculatorTest" />
-        <item itemvalue="JUnit.DirectLevel6CalculatorTest" />
-        <item itemvalue="JUnit.Level5Level6CalculatorTest" />
-        <item itemvalue="JUnit.DirectLevel6CalculatorTest.testStudentEClassification" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +183,7 @@
       <workItem from="1734216190131" duration="27711000" />
       <workItem from="1734344186290" duration="830000" />
       <workItem from="1734346845135" duration="28049000" />
-      <workItem from="1734526269178" duration="23748000" />
+      <workItem from="1734526269178" duration="25164000" />
     </task>
     <servers />
   </component>

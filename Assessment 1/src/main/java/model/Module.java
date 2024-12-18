@@ -1,18 +1,18 @@
 package model;
 
 public class Module {
-    private String name;
-    private int credits;
-    private double marks;
+    private String code; // Module code, e.g., "COM5023"
+    private int credits; // Credits for the module
+    private double marks; // Marks for the module
 
-    public Module(String name, int credits, double marks) {
-        this.name = name;
+    public Module(String code, int credits, double marks) {
+        this.code = code;
         this.credits = credits;
         this.marks = marks;
     }
 
-    public String getName() {
-        return name;  // Add this getter for the 'name' field
+    public String getCode() {
+        return code;
     }
 
     public int getCredits() {
