@@ -31,14 +31,4 @@ public class Validator {
         return totalCredits == 120; // Valid if total credits equal 120
     }
 
-    // Validate that module codes align with their respective levels
-    public boolean validateModuleCodes(List<Module> modules, int level) {
-        for (Module module : modules) {
-            String moduleCode = module.getCode();
-            if (moduleCode == null || moduleCode.isEmpty() || moduleCode.charAt(0) - '0' != level) {
-                return false; // Fail validation if module code's first digit does not match the level
-            }
-        }
-        return true;
-    }
 }

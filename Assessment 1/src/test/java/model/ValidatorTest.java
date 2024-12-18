@@ -13,14 +13,14 @@ class ValidatorTest {
     @Test
     void testValidatePassMarks() {
         List<Module> modules = List.of(
-                new Module("5COM5015", 30, 45),
-                new Module("5COM5020", 40, 50)
+                new Module("COM5015", 30, 45),
+                new Module("COM5020", 40, 50)
         );
         assertTrue(validator.validatePassMarks(modules));
 
         modules = List.of(
-                new Module("5COM5015", 30, 35), // Failing mark
-                new Module("5COM5020", 40, 50)
+                new Module("COM5015", 30, 35), // Failing mark
+                new Module("COM5020", 40, 50)
         );
         assertFalse(validator.validatePassMarks(modules));
     }
@@ -28,13 +28,13 @@ class ValidatorTest {
     @Test
     void testValidateCategoricalMarks() {
         List<Module> modules = List.of(
-                new Module("5COM5015", 30, 45),
-                new Module("5COM5020", 40, 50)
+                new Module("COM5015", 30, 45),
+                new Module("COM5020", 40, 50)
         );
         assertTrue(validator.validateCategoricalMarks(modules));
 
         modules = List.of(
-                new Module("5COM5015", 30, 45.5) // Non-integer mark
+                new Module("COM5015", 30, 45.5) // Non-integer mark
         );
         assertFalse(validator.validateCategoricalMarks(modules));
     }
@@ -42,30 +42,17 @@ class ValidatorTest {
     @Test
     void testValidateCreditsPerLevel() {
         List<Module> modules = List.of(
-                new Module("5COM5015", 30, 45),
-                new Module("5COM5020", 40, 50),
-                new Module("5COM5030", 50, 60)
+                new Module("COM5015", 30, 45),
+                new Module("COM5020", 40, 50),
+                new Module("COM5030", 50, 60)
         );
         assertTrue(validator.validateCreditsPerLevel(modules));
 
         modules = List.of(
-                new Module("5COM5015", 30, 45),
-                new Module("5COM5020", 40, 50) // Total credits = 70
+                new Module("COM5015", 30, 45),
+                new Module("COM5020", 40, 50) // Total credits = 70
         );
         assertFalse(validator.validateCreditsPerLevel(modules));
     }
 
-    @Test
-    void testValidateModuleCodes() {
-        List<Module> modules = List.of(
-                new Module("5COM5015", 30, 45),
-                new Module("5COM5020", 40, 50)
-        );
-        assertTrue(validator.validateModuleCodes(modules, 5));
-
-        modules = List.of(
-                new Module("6COM6015", 30, 45) // Module code starts with 6
-        );
-        assertFalse(validator.validateModuleCodes(modules, 5));
-    }
 }

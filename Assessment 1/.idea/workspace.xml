@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa034449-2d95-4c63-8842-8e365e58288f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Validator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/ValidatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/ModuleDataExtractor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/ValidationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/PanelUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/ModuleDataExtractorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/ValidationServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Module.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Validator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/DirectL6Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/DirectL6Panel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/Level5Level6Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Level5Level6Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/ModuleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ModuleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/ValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ValidatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +57,7 @@
     "JUnit.MarkClassifierTest.executor": "Run",
     "JUnit.ModuleTest.executor": "Run",
     "JUnit.TableTest.executor": "Run",
+    "JUnit.ValidationServiceTest.executor": "Run",
     "JUnit.ValidatorTest (1).executor": "Run",
     "JUnit.ValidatorTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -87,7 +90,7 @@
       <recent name="ui" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ValidatorTest (1)">
+  <component name="RunManager" selected="JUnit.ModuleDataExtractorTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Assessment-1" />
@@ -95,7 +98,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MarkClassifierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ModuleDataExtractorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assessment-1" />
       <extension name="coverage">
         <pattern>
@@ -104,13 +107,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.MarkClassifierTest" />
+      <option name="MAIN_CLASS_NAME" value="model.ModuleDataExtractorTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ModuleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ValidationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assessment-1" />
       <extension name="coverage">
         <pattern>
@@ -119,7 +122,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.ModuleTest" />
+      <option name="MAIN_CLASS_NAME" value="model.ValidationServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ModuleDataExtractorTest" />
         <item itemvalue="JUnit.ValidatorTest (1)" />
-        <item itemvalue="JUnit.ValidatorTest" />
-        <item itemvalue="JUnit.ModuleTest" />
+        <item itemvalue="JUnit.ValidationServiceTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.MarkClassifierTest" />
+        <item itemvalue="JUnit.ValidatorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -183,7 +186,7 @@
       <workItem from="1734216190131" duration="27711000" />
       <workItem from="1734344186290" duration="830000" />
       <workItem from="1734346845135" duration="28049000" />
-      <workItem from="1734526269178" duration="25164000" />
+      <workItem from="1734526269178" duration="27862000" />
     </task>
     <servers />
   </component>
