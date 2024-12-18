@@ -2,61 +2,31 @@ package model;
 
 import java.util.List;
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collections;
 
 public class Level5Level6Calculator {
 
-    // Method A: The average mark of all module marks achieved at Level 5 and Level 6
+    private MarkClassifier markClassifier = new MarkClassifier();
+    private AverageCalculator averageCalculator = new AverageCalculator();
+
     public double calculateMethodA(List<Double> l5Marks, List<Integer> l5Credits, List<Double> l6Marks, List<Integer> l6Credits) {
-        double weightedL5Sum = 0;
-        double weightedL6Sum = 0;
-        int totalL5Credits = 0;
-        int totalL6Credits = 0;
+        double l5Average = averageCalculator.calculateAverage(createModules(l5Marks, l5Credits, "Level 5"));
+        double l6Average = averageCalculator.calculateAverage(createModules(l6Marks, l6Credits, "Level 6"));
 
-        // Calculate weighted sums and total credits for Level 5
-        for (int i = 0; i < l5Marks.size(); i++) {
-            weightedL5Sum += l5Marks.get(i) * l5Credits.get(i);
-            totalL5Credits += l5Credits.get(i);
-        }
-
-        // Calculate weighted sums and total credits for Level 6
-        for (int i = 0; i < l6Marks.size(); i++) {
-            weightedL6Sum += l6Marks.get(i) * l6Credits.get(i);
-            totalL6Credits += l6Credits.get(i);
-        }
-
-        // Calculate averages for Level 5 and Level 6
-        double l5Average = weightedL5Sum / totalL5Credits;
-        double l6Average = weightedL6Sum / totalL6Credits;
-
-        // Calculate overall average (Method A)
-        return (l5Average + l6Average) / 2;
+        // Explicit rounding after combining averages
+        double result = (l5Average + l6Average) / 2;
+        return Math.round(result * 100.0) / 100.0;
     }
+
+
 
     // Method B: The average mark of all module marks achieved at Level 5 and Level 6, weighted 2:1 for Level 6
     public double calculateMethodB(List<Double> l5Marks, List<Integer> l5Credits, List<Double> l6Marks, List<Integer> l6Credits) {
-        double weightedL5Sum = 0;
-        double weightedL6Sum = 0;
-        int totalL5Credits = 0;
-        int totalL6Credits = 0;
+        double l5Average = averageCalculator.calculateAverage(createModules(l5Marks, l5Credits, "Level 5"));
+        double l6Average = averageCalculator.calculateAverage(createModules(l6Marks, l6Credits, "Level 6"));
 
-        // Calculate weighted sums and total credits for Level 5
-        for (int i = 0; i < l5Marks.size(); i++) {
-            weightedL5Sum += l5Marks.get(i) * l5Credits.get(i);
-            totalL5Credits += l5Credits.get(i);
-        }
-
-        // Calculate weighted sums and total credits for Level 6
-        for (int i = 0; i < l6Marks.size(); i++) {
-            weightedL6Sum += l6Marks.get(i) * l6Credits.get(i);
-            totalL6Credits += l6Credits.get(i);
-        }
-
-        // Calculate averages for Level 5 and Level 6
-        double l5Average = weightedL5Sum / totalL5Credits;
-        double l6Average = weightedL6Sum / totalL6Credits;
-
-        // Calculate overall average (Method B)
+        // Calculate overall average (Method B), with Level 6 weighted 2:1
         return (l5Average + 2 * l6Average) / 3;
     }
 
@@ -69,9 +39,9 @@ public class Level5Level6Calculator {
         String profileMarkClassification = getProfileMarkClassification(l5Marks, l5Credits, l6Marks, l6Credits);
 
         // Convert Method A, Method B, and Profile Mark classifications to numeric values
-        int methodANumericValue = getNumericValueFromClassification(getClassification(methodAResult));
-        int methodBNumericValue = getNumericValueFromClassification(getClassification(methodBResult));
-        int profileNumericValue = getNumericValueFromClassification(profileMarkClassification);
+        int methodANumericValue = markClassifier.getNumericValueFromClassification(markClassifier.getClassification(methodAResult));
+        int methodBNumericValue = markClassifier.getNumericValueFromClassification(markClassifier.getClassification(methodBResult));
+        int profileNumericValue = markClassifier.getNumericValueFromClassification(profileMarkClassification);
 
         // Store the numeric values in a list for sorting
         List<Integer> numericResults = Arrays.asList(methodANumericValue, methodBNumericValue, profileNumericValue);
@@ -83,28 +53,22 @@ public class Level5Level6Calculator {
         int bestNumericResult = numericResults.get(0);
 
         // Convert the best numeric result back to the classification string
-        String finalClassification = getClassificationFromNumericValue(bestNumericResult);
+        String finalClassification = markClassifier.getClassificationFromNumericValue(bestNumericResult);
 
         // Format the results
         return String.format(
                 "Method A - Average 1 (Level 5 + Level 6): %.2f (%s)\nMethod B - Average 2 (Level 5 + Level 6 x2): %.2f (%s)\nMethod D - Profile Mark Classification: %s\nResulting Classification: %s",
-                methodAResult, getClassification(methodAResult), methodBResult, getClassification(methodBResult), profileMarkClassification, finalClassification
+                methodAResult, markClassifier.getClassification(methodAResult), methodBResult, markClassifier.getClassification(methodBResult), profileMarkClassification, finalClassification
         );
     }
 
-    // Helper method to determine classification based on mark
-    private String getClassification(double mark) {
-        if (mark >= 70) {
-            return "1";
-        } else if (mark >= 60) {
-            return "2.1";
-        } else if (mark >= 50) {
-            return "2.2";
-        } else if (mark >= 40) {
-            return "3rd";
-        } else {
-            return "Fail";
+    // Helper method to create modules from marks and credits for both Level 5 and Level 6
+    private List<Module> createModules(List<Double> marks, List<Integer> credits, String level) {
+        List<Module> modules = new ArrayList<>();
+        for (int i = 0; i < marks.size(); i++) {
+            modules.add(new Module(level, credits.get(i), marks.get(i)));
         }
+        return modules;
     }
 
     // Helper method to calculate profile mark classification based on the total credits in each classification
@@ -115,7 +79,7 @@ public class Level5Level6Calculator {
         // Calculate Level 5 credit classifications
         for (int i = 0; i < l5Marks.size(); i++) {
             int credits = l5Credits.get(i);
-            if (getClassification(l5Marks.get(i)).equals("1")) {
+            if (markClassifier.getClassification(l5Marks.get(i)).equals("1")) {
                 higherClassCredits += credits;
             }
             totalCredits += credits;
@@ -124,7 +88,7 @@ public class Level5Level6Calculator {
         // Calculate Level 6 credit classifications with double weighting
         for (int i = 0; i < l6Marks.size(); i++) {
             int credits = l6Credits.get(i) * 2;  // Double weighting for Level 6
-            if (getClassification(l6Marks.get(i)).equals("1")) {
+            if (markClassifier.getClassification(l6Marks.get(i)).equals("1")) {
                 higherClassCredits += credits;
             }
             totalCredits += credits;
@@ -135,30 +99,6 @@ public class Level5Level6Calculator {
             return "1";
         } else {
             return "2.1";
-        }
-    }
-
-    // Helper method to convert classification to numeric value for sorting
-    private int getNumericValueFromClassification(String classification) {
-        switch (classification) {
-            case "1": return 1;  // Best grade
-            case "2.1": return 2;
-            case "2.2": return 3;
-            case "3rd": return 4;
-            case "Fail": return 5;  // Worst grade
-            default: return Integer.MAX_VALUE;  // Error case
-        }
-    }
-
-    // Helper method to convert numeric value back to classification string
-    private String getClassificationFromNumericValue(int numericValue) {
-        switch (numericValue) {
-            case 1: return "1";
-            case 2: return "2.1";
-            case 3: return "2.2";
-            case 4: return "3rd";
-            case 5: return "Fail";
-            default: return "Unknown";
         }
     }
 }

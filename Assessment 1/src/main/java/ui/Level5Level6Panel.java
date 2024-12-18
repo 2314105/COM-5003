@@ -65,7 +65,7 @@ public class Level5Level6Panel extends JPanel {
         }
     }
 
-    // In extractAndDisplayData method:
+    // Method to extract data from tables and calculate/display results
     private void extractAndDisplayData(Table level5Table, Table level6Table) {
         List<Double> l5Marks = new ArrayList<>();
         List<Integer> l5Credits = new ArrayList<>();
@@ -85,7 +85,7 @@ public class Level5Level6Panel extends JPanel {
         footer.updateResults(result);
     }
 
-    // Extracts data from a table and populates the marks and credits lists
+    // Helper method to extract data from a table and populate the marks and credits lists
     private void extractTableData(Table table, List<Double> marks, List<Integer> credits) {
         Component[] components = table.getComponents();
 

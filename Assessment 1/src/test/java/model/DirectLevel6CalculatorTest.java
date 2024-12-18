@@ -1,45 +1,46 @@
 package model;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 
-public class DirectLevel6CalculatorTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class DirectLevel6CalculatorTest {
+
+    private DirectLevel6Calculator calculator;
+
+    @BeforeEach
+    void setUp() {
+        AverageCalculator averageCalculator = new AverageCalculator();
+        MarkClassifier markClassifier = new MarkClassifier();
+        calculator = new DirectLevel6Calculator(averageCalculator, markClassifier);
+    }
 
     @Test
-    public void testStudentDClassification() {
-        // Student D: JOU6006, JOU6063, JOU6093
+    void testStudentDClassification() {
+        // Student D modules
         List<Module> modules = List.of(
                 new Module("JOU6006", 60, 58),
                 new Module("JOU6063", 30, 58),
                 new Module("JOU6093", 30, 68)
         );
 
-        // Calculate the average
-        double average = DirectLevel6Calculator.calculateL6Average(modules);
-        assertEquals(60.50, average, "Average should be 60.50");
+        String expectedOutput = """
+                Method C - Average 1 L6: 60.50 (2.1)
+                Method D - Profile Mark Classification: 2.2
+                Resulting Classification: 2.1
+                """;
 
-        // Calculate the profile classification
-        String profileClassification = DirectLevel6Calculator.calculateProfileClassification(modules);
-        assertEquals("2.2", profileClassification, "Profile classification should be 2.2");
+        String actualOutput = calculator.calculateFinalClassification(modules);
 
-        // Calculate the final classification
-        String finalClassification = DirectLevel6Calculator.calculateFinalClassification(modules);
-        assertEquals("2.1", finalClassification, "Final classification should be 2.1");
-
-        // Format and assert the result
-        String result = DirectLevel6Calculator.formatResults(average, finalClassification, profileClassification);
-        String expectedResult =
-                "Method C - Average 1 L6: 60.50 (2.1)\n" +
-                        "Method D - Profile Mark Classification: 2.2\n" +
-                        "Resulting Classification: 2.1";
-        assertEquals(expectedResult, result, "Formatted result is incorrect");
+        assertEquals(expectedOutput, actualOutput);
     }
 
     @Test
-    public void testStudentEClassification() {
-        // Student E: SHN6033, SHN6053, SHN6073, SHN6143
+    void testStudentEClassification() {
+        // Student E modules
         List<Module> modules = List.of(
                 new Module("SHN6033", 30, 68),
                 new Module("SHN6053", 30, 65),
@@ -47,24 +48,14 @@ public class DirectLevel6CalculatorTest {
                 new Module("SHN6143", 30, 42)
         );
 
-        // Calculate the average
-        double average = DirectLevel6Calculator.calculateL6Average(modules);
-        assertEquals(59.25, average, "Average should be 59.25");
+        String expectedOutput = """
+                Method C - Average 1 L6: 59.25 (2.2)
+                Method D - Profile Mark Classification: 2.1
+                Resulting Classification: 2.1
+                """;
 
-        // Calculate the profile classification
-        String profileClassification = DirectLevel6Calculator.calculateProfileClassification(modules);
-        assertEquals("2.1", profileClassification, "Profile classification should be 2.1");
+        String actualOutput = calculator.calculateFinalClassification(modules);
 
-        // Calculate the final classification
-        String finalClassification = DirectLevel6Calculator.calculateFinalClassification(modules);
-        assertEquals("2.1", finalClassification, "Final classification should be 2.1");
-
-        // Format and assert the result
-        String result = DirectLevel6Calculator.formatResults(average, finalClassification, profileClassification);
-        String expectedResult =
-                "Method C - Average 1 L6: 59.25 (2.2)\n" +
-                        "Method D - Profile Mark Classification: 2.1\n" +
-                        "Resulting Classification: 2.1";
-        assertEquals(expectedResult, result, "Formatted result is incorrect");
+        assertEquals(expectedOutput, actualOutput);
     }
 }

@@ -2,110 +2,103 @@ package ui;
 
 import model.DirectLevel6Calculator;
 import model.Module;
+import model.AverageCalculator;
+import model.MarkClassifier;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DirectL6Panel extends JPanel {
-
     // Constants for design
-    private static final Color BACKGROUND_COLOR = Color.LIGHT_GRAY;
+    public class DirectL6Panel extends JPanel {
 
-    private Table inputFieldsPanel; // Input fields panel
-    private Footer footer;         // Footer panel to display results
+        private static final Color BACKGROUND_COLOR = Color.LIGHT_GRAY;
 
-    public DirectL6Panel() {
-        setLayout(new BorderLayout());
-        initializeComponents(); // Initialize UI components
-        setupListeners();       // Set up action listeners
-        revalidate();
-        repaint();
-    }
+        private Table inputFieldsPanel;
+        private Footer footer;
+        private final DirectLevel6Calculator calculator;
 
-    // Initializes the middle panel and major components
-    private void initializeComponents() {
-        JPanel middlePanel = initializeMiddlePanel(); // Create and configure a middle panel
-        inputFieldsPanel = new Table(7);              // Create inputFieldsPanel dynamically
-        middlePanel.add(inputFieldsPanel, getGridBagConstraints(1));
-
-        footer = new Footer(inputFieldsPanel);        // Initialize footer
-        add(middlePanel, BorderLayout.CENTER);        // Add components to respective layout positions
-        add(footer, BorderLayout.SOUTH);
-    }
-
-    // Sets up the middle panel
-    private JPanel initializeMiddlePanel() {
-        JPanel middlePanel = new JPanel(new GridBagLayout());
-        middlePanel.setBackground(BACKGROUND_COLOR);
-        middlePanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
-        return middlePanel;
-    }
-
-    // Configures grid constraints for layout
-    private GridBagConstraints getGridBagConstraints(int gridy) {
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.gridy = gridy;
-        gbc.insets = new Insets(5, 10, 5, 10);
-        return gbc;
-    }
-
-    // Configures listeners for panel-specific actions
-    private void setupListeners() {
-        footer.getCalculateButton().addActionListener(e -> processAndDisplayResults());
-    }
-
-    // Handle calculations and result updates
-    private void processAndDisplayResults() {
-        List<Module> modules = extractModulesFromFields();
-
-        if (modules.isEmpty()) {
-            footer.updateResults("Error: No valid modules provided.");
-            return;
+        public DirectL6Panel() {
+            this.calculator = new DirectLevel6Calculator(new AverageCalculator(), new MarkClassifier());
+            setLayout(new BorderLayout());
+            initializeComponents();
+            setupListeners();
+            revalidate();
+            repaint();
         }
 
-        // Direct calculations via DirectLevel6Calculator
-        String finalResults = DirectLevel6Calculator.calculateFinalClassification(modules);
+        private void initializeComponents() {
+            JPanel middlePanel = initializeMiddlePanel();
+            inputFieldsPanel = new Table(7);
+            middlePanel.add(inputFieldsPanel, getGridBagConstraints(1));
 
-        updateFooterResults(finalResults);
-    }
+            footer = new Footer(inputFieldsPanel);
+            add(middlePanel, BorderLayout.CENTER);
+            add(footer, BorderLayout.SOUTH);
+        }
 
-    private List<Module> extractModulesFromFields() {
-        List<Module> modules = new ArrayList<>();
-        Component[] components = inputFieldsPanel.getComponents();
+        private JPanel initializeMiddlePanel() {
+            JPanel middlePanel = new JPanel(new GridBagLayout());
+            middlePanel.setBackground(BACKGROUND_COLOR);
+            middlePanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+            return middlePanel;
+        }
 
-        for (int i = 3; i < components.length; i += 3) { // Process each set of fields (module, credits, marks)
-            try {
-                JTextField creditsField = (JTextField) components[i + 1];
-                JTextField marksField = (JTextField) components[i + 2];
+        private GridBagConstraints getGridBagConstraints(int gridy) {
+            GridBagConstraints gbc = new GridBagConstraints();
+            gbc.gridx = 0;
+            gbc.gridy = gridy;
+            gbc.insets = new Insets(5, 10, 5, 10);
+            return gbc;
+        }
 
-                String creditsText = creditsField.getText().trim();
-                String marksText = marksField.getText().trim();
+        private void setupListeners() {
+            footer.getCalculateButton().addActionListener(e -> processAndDisplayResults());
+        }
 
-                // Skip rows with empty fields
-                if (creditsText.isEmpty() || marksText.isEmpty()) {
-                    continue; // Skip this row and move to the next one
-                }
+        private void processAndDisplayResults() {
+            List<Module> modules = extractModulesFromFields();
 
-                int credits = Integer.parseInt(creditsText);
-                double marks = Double.parseDouble(marksText);
-
-                // Add valid module
-                modules.add(new Module("Module" + (modules.size() + 1), credits, marks));
-            } catch (NumberFormatException ex) {
-                // Handle invalid data in the fields
-                footer.updateResults("Error: Ensure credits and marks fields are filled correctly.");
-                return new ArrayList<>(); // Return empty list if there's an error
+            if (modules.isEmpty()) {
+                footer.updateResults("Error: No valid modules provided.");
+                return;
             }
+
+            String finalResults = calculator.calculateFinalClassification(modules);
+            updateFooterResults(finalResults);
         }
 
-        return modules;
-    }
+        private List<Module> extractModulesFromFields() {
+            List<Module> modules = new ArrayList<>();
+            Component[] components = inputFieldsPanel.getComponents();
 
-    // Display results in the footer
-    private void updateFooterResults(String finalResults) {
-        footer.updateResults(finalResults);
+            for (int i = 3; i < components.length; i += 3) {
+                try {
+                    JTextField creditsField = (JTextField) components[i + 1];
+                    JTextField marksField = (JTextField) components[i + 2];
+
+                    String creditsText = creditsField.getText().trim();
+                    String marksText = marksField.getText().trim();
+
+                    if (creditsText.isEmpty() || marksText.isEmpty()) {
+                        continue;
+                    }
+
+                    int credits = Integer.parseInt(creditsText);
+                    double marks = Double.parseDouble(marksText);
+
+                    modules.add(new Module("Module" + (modules.size() + 1), credits, marks));
+                } catch (NumberFormatException ex) {
+                    footer.updateResults("Error: Ensure credits and marks fields are filled correctly.");
+                    return new ArrayList<>();
+                }
+            }
+
+            return modules;
+        }
+
+        private void updateFooterResults(String finalResults) {
+            footer.updateResults(finalResults);
+        }
     }
-}
