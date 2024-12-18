@@ -94,9 +94,10 @@ public class DirectLevel6Calculator {
     // Method to format the results
     private static String formatResults(double average, String finalClassification, String profileClassification) {
         StringBuilder result = new StringBuilder();
-        result.append("Average (Level 6): ").append(String.format("%.2f", average)).append("\n");
-        result.append("Final Classification: ").append(finalClassification).append("\n");
-        result.append("Profile Classification: ").append(profileClassification).append("\n");
+        result.append("Method C - Average 1 L6: ").append(String.format("%.2f", average))
+                .append(" (").append(finalClassification).append(")\n");
+        result.append("Method D - Profile Mark Classification: ").append(profileClassification).append("\n");
+        result.append("Resulting Classification: ").append(finalClassification).append("\n");
         return result.toString();
     }
 }

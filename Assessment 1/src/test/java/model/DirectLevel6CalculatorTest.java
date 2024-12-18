@@ -3,58 +3,68 @@ package model;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class DirectLevel6CalculatorTest {
 
-    // Test for calculateL6Average
     @Test
-    public void testCalculateL6Average() {
-        Module module1 = new Module("Module 1", 20, 75);
-        Module module2 = new Module("Module 2", 30, 65);
-        Module module3 = new Module("Module 3", 10, 50);
-        List<Module> modules = Arrays.asList(module1, module2, module3);
+    public void testStudentDClassification() {
+        // Student D: JOU6006, JOU6063, JOU6093
+        List<Module> modules = List.of(
+                new Module("JOU6006", 60, 58),
+                new Module("JOU6063", 30, 58),
+                new Module("JOU6093", 30, 68)
+        );
 
-        double result = DirectLevel6Calculator.calculateL6Average(modules);
+        // Calculate the average
+        double average = DirectLevel6Calculator.calculateL6Average(modules);
+        assertEquals(60.50, average, "Average should be 60.50");
 
-        // Calculate expected weighted average manually
-        double expected = (20 * 75 + 30 * 65 + 10 * 50) / (20 + 30 + 10);
+        // Calculate the profile classification
+        String profileClassification = DirectLevel6Calculator.calculateProfileClassification(modules);
+        assertEquals("2.2", profileClassification, "Profile classification should be 2.2");
 
-        // Assert that the result matches the expected value rounded to 2 decimal places
-        assertEquals(expected, result, 0.01);
+        // Calculate the final classification
+        String finalClassification = DirectLevel6Calculator.calculateFinalClassification(modules);
+        assertEquals("2.1", finalClassification, "Final classification should be 2.1");
+
+        // Format and assert the result
+        String result = DirectLevel6Calculator.formatResults(average, finalClassification, profileClassification);
+        String expectedResult =
+                "Method C - Average 1 L6: 60.50 (2.1)\n" +
+                        "Method D - Profile Mark Classification: 2.2\n" +
+                        "Resulting Classification: 2.1";
+        assertEquals(expectedResult, result, "Formatted result is incorrect");
     }
 
-    // Test for calculateProfileClassification
     @Test
-    public void testCalculateProfileClassification() {
-        Module module1 = new Module("Module 1", 20, 75); // First Class
-        Module module2 = new Module("Module 2", 30, 65); // Upper Second Class
-        Module module3 = new Module("Module 3", 10, 50); // Lower Second Class
-        Module module4 = new Module("Module 4", 40, 80); // First Class
-        List<Module> modules = Arrays.asList(module1, module2, module3, module4);
+    public void testStudentEClassification() {
+        // Student E: SHN6033, SHN6053, SHN6073, SHN6143
+        List<Module> modules = List.of(
+                new Module("SHN6033", 30, 68),
+                new Module("SHN6053", 30, 65),
+                new Module("SHN6073", 30, 62),
+                new Module("SHN6143", 30, 42)
+        );
 
-        String result = DirectLevel6Calculator.calculateProfileClassification(modules);
+        // Calculate the average
+        double average = DirectLevel6Calculator.calculateL6Average(modules);
+        assertEquals(59.25, average, "Average should be 59.25");
 
-        // Assert the classification
-        assertEquals("1st", result);
-    }
+        // Calculate the profile classification
+        String profileClassification = DirectLevel6Calculator.calculateProfileClassification(modules);
+        assertEquals("2.1", profileClassification, "Profile classification should be 2.1");
 
-    // Test for calculateFinalClassification
-    @Test
-    public void testCalculateFinalClassification() {
-        Module module1 = new Module("Module 1", 20, 75); // First Class
-        Module module2 = new Module("Module 2", 30, 65); // Upper Second Class
-        Module module3 = new Module("Module 3", 10, 50); // Lower Second Class
-        Module module4 = new Module("Module 4", 40, 80); // First Class
-        List<Module> modules = Arrays.asList(module1, module2, module3, module4);
+        // Calculate the final classification
+        String finalClassification = DirectLevel6Calculator.calculateFinalClassification(modules);
+        assertEquals("2.1", finalClassification, "Final classification should be 2.1");
 
-        String result = DirectLevel6Calculator.calculateFinalClassification(modules);
-
-        // Expected output format
-        String expected = "Average: 68.50\nClassification: 1st\nProfile Classification: 1st";
-
-        // Assert the final classification result
-        assertEquals(expected, result);
+        // Format and assert the result
+        String result = DirectLevel6Calculator.formatResults(average, finalClassification, profileClassification);
+        String expectedResult =
+                "Method C - Average 1 L6: 59.25 (2.2)\n" +
+                        "Method D - Profile Mark Classification: 2.1\n" +
+                        "Resulting Classification: 2.1";
+        assertEquals(expectedResult, result, "Formatted result is incorrect");
     }
 }

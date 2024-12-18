@@ -8,6 +8,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/DirectLevel6Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DirectLevel6Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Level5Level6Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Level5Level6Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/DirectLevel6CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/DirectLevel6CalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/Level5Level6CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/Level5Level6CalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semestar 1 Lesson 8/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semestar 1 Lesson 8/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semestar 1 Lesson 8/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semestar 1 Lesson 8/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semestar 1 Lesson 8/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semestar 1 Lesson 8/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +50,7 @@
     "JUnit.DatabaseManagerTest.executor": "Run",
     "JUnit.DirectLevel6CalculatorTest.executor": "Run",
     "JUnit.Level5Level6CalculatorTest.executor": "Run",
+    "JUnit.Level5Level6CalculatorTest.testScenario1.executor": "Run",
     "JUnit.ModuleTest.executor": "Run",
     "JUnit.TableTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -97,10 +106,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Level5Level6CalculatorTest.testScenario1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assessment-1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.Level5Level6CalculatorTest" />
+      <option name="METHOD_NAME" value="testScenario1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.Level5Level6CalculatorTest" />
+        <item itemvalue="JUnit.Level5Level6CalculatorTest.testScenario1" />
       </list>
     </recent_temporary>
   </component>
@@ -127,7 +153,8 @@
       <workItem from="1734212641337" duration="126000" />
       <workItem from="1734216190131" duration="27711000" />
       <workItem from="1734344186290" duration="830000" />
-      <workItem from="1734346845135" duration="8669000" />
+      <workItem from="1734346845135" duration="28049000" />
+      <workItem from="1734526269178" duration="7046000" />
     </task>
     <servers />
   </component>
