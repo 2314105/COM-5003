@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa034449-2d95-4c63-8842-8e365e58288f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/AverageCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/MarkClassifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/DirectLevel6Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DirectLevel6Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Level5Level6Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Level5Level6Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/DirectL6Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/DirectL6Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Level5Level6Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Level5Level6Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/DirectLevel6CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/DirectLevel6CalculatorTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="aa034449-2d95-4c63-8842-8e365e58288f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,10 +74,18 @@
       <recent name="ui" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DirectLevel6CalculatorTest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="JUnit.MarkClassifierTest">
+    <configuration name="AverageCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assessment-1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.AverageCalculatorTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -102,22 +101,6 @@
       <option name="PACKAGE_NAME" value="model" />
       <option name="MAIN_CLASS_NAME" value="model.DirectLevel6CalculatorTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DirectLevel6CalculatorTest.testStudentDClassification" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assessment-1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.DirectLevel6CalculatorTest" />
-      <option name="METHOD_NAME" value="testStudentDClassification" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,13 +136,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MarkClassifierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assessment-1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.MarkClassifierTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MarkClassifierTest" />
+        <item itemvalue="JUnit.AverageCalculatorTest" />
         <item itemvalue="JUnit.DirectLevel6CalculatorTest" />
         <item itemvalue="JUnit.Level5Level6CalculatorTest" />
         <item itemvalue="JUnit.DirectLevel6CalculatorTest.testStudentEClassification" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.DirectLevel6CalculatorTest.testStudentDClassification" />
       </list>
     </recent_temporary>
   </component>
@@ -187,7 +185,7 @@
       <workItem from="1734216190131" duration="27711000" />
       <workItem from="1734344186290" duration="830000" />
       <workItem from="1734346845135" duration="28049000" />
-      <workItem from="1734526269178" duration="23355000" />
+      <workItem from="1734526269178" duration="23748000" />
     </task>
     <servers />
   </component>
