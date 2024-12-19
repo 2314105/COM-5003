@@ -5,16 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa034449-2d95-4c63-8842-8e365e58288f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/ModuleDataExtractor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/ValidationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/PanelUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/ModuleDataExtractorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/ValidationServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/ValidationManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/AverageCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/AverageCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DirectLevel6Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DirectLevel6Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Level5Level6Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Level5Level6Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/MarkClassifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/MarkClassifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Module.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/ModuleDataExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ModuleDataExtractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/ValidationService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Validator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/DirectL6Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/DirectL6Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Footer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Footer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/Level5Level6Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Level5Level6Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Navbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Navbar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/PanelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/PanelUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/SignInPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/SignInPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/AverageCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/AverageCalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/DatabaseManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/DatabaseManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/DirectLevel6CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/DirectLevel6CalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/Level5Level6CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/Level5Level6CalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/MarkClassifierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/MarkClassifierTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/ModuleDataExtractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ModuleDataExtractorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/ModuleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ModuleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/ValidationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ValidationManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/model/ValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ValidatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui/TableTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,13 +75,16 @@
     "JUnit.Level5Level6CalculatorTest.testScenario1.executor": "Run",
     "JUnit.Level5Level6CalculatorTest.testScenario3.executor": "Run",
     "JUnit.MarkClassifierTest.executor": "Run",
+    "JUnit.ModuleDataExtractorTest.executor": "Run",
     "JUnit.ModuleTest.executor": "Run",
     "JUnit.TableTest.executor": "Run",
+    "JUnit.ValidationManagerTest.executor": "Run",
     "JUnit.ValidationServiceTest.executor": "Run",
     "JUnit.ValidatorTest (1).executor": "Run",
     "JUnit.ValidatorTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
@@ -90,7 +113,7 @@
       <recent name="ui" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ModuleDataExtractorTest">
+  <component name="RunManager" selected="JUnit.TableTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Assessment-1" />
@@ -113,7 +136,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ValidationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assessment-1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ui" />
+      <option name="MAIN_CLASS_NAME" value="ui.TableTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidationManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assessment-1" />
       <extension name="coverage">
         <pattern>
@@ -122,13 +160,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.ValidationServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="model.ValidationManagerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ValidatorTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ValidatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assessment-1" />
       <extension name="coverage">
         <pattern>
@@ -143,22 +181,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ValidatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assessment-1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ValidatorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TableTest" />
+        <item itemvalue="JUnit.ValidationManagerTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ModuleDataExtractorTest" />
         <item itemvalue="JUnit.ValidatorTest (1)" />
-        <item itemvalue="JUnit.ValidationServiceTest" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.ValidatorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -186,7 +215,7 @@
       <workItem from="1734216190131" duration="27711000" />
       <workItem from="1734344186290" duration="830000" />
       <workItem from="1734346845135" duration="28049000" />
-      <workItem from="1734526269178" duration="27862000" />
+      <workItem from="1734526269178" duration="39841000" />
     </task>
     <servers />
   </component>

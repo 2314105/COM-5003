@@ -8,72 +8,92 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class ValidationServiceTest {
+/*
+This class tests the ValidationManager class, ensuring that it correctly validates
+module data under different scenarios by using mock dependencies for isolation.
+*/
+class ValidationManagerTest {
 
-    private ValidationService validationService;
-    private MockValidator mockValidator;
-    private TestValidationFeedback feedback;
+    private ValidationManager validationManager; // The class under test
+    private MockValidator mockValidator; // Mock implementation of the Validator class
+    private TestValidationFeedback feedback; // Mock implementation for capturing feedback
 
+    /*
+    Sets up the test environment before each test, initializing the mock dependencies
+    and the ValidationManager instance.
+    */
     @BeforeEach
     void setUp() {
         mockValidator = new MockValidator();
-        validationService = new ValidationService(mockValidator);
+        validationManager = new ValidationManager(mockValidator);
         feedback = new TestValidationFeedback();
     }
 
+    /*
+    Tests validation failure when one or more modules fail the pass marks criteria (marks < 40).
+    */
     @Test
     void testValidateModulesPassMarksFail() {
-        // Arrange
+        // Arrange: Create a list of modules where one fails the pass marks validation
         List<Module> modules = List.of(
                 new Module("Module1", 30, 35), // Fails pass marks
                 new Module("Module2", 30, 50)
         );
-        mockValidator.setPassMarksValid(false);
+        mockValidator.setPassMarksValid(false); // Simulate pass marks validation failure
 
-        // Act
-        boolean isValid = validationService.validateModules(modules, 5, feedback);
+        // Act: Validate the modules
+        boolean isValid = validationManager.validateModules(modules, 5, feedback);
 
-        // Assert
+        // Assert: Validation should fail, and feedback should contain the appropriate error message
         assertFalse(isValid);
         assertTrue(feedback.getLastMessage().contains("Error: All marks must be 40% or above to pass."));
     }
 
+    /*
+    Tests validation failure when one or more modules have non-integer marks.
+    */
     @Test
     void testValidateModulesCategoricalMarksFail() {
-        // Arrange
+        // Arrange: Create a list of modules where one has non-integer marks
         List<Module> modules = List.of(
-                new Module("Module1", 30, 45.5) // Fails categorical marks
+                new Module("Module1", 30, 45.5) // Fails categorical marks validation
         );
-        mockValidator.setCategoricalMarksValid(false);
+        mockValidator.setCategoricalMarksValid(false); // Simulate categorical marks validation failure
 
-        // Act
-        boolean isValid = validationService.validateModules(modules, 5, feedback);
+        // Act: Validate the modules
+        boolean isValid = validationManager.validateModules(modules, 5, feedback);
 
-        // Assert
+        // Assert: Validation should fail, and feedback should contain the appropriate error message
         assertFalse(isValid);
         assertTrue(feedback.getLastMessage().contains("Error: Marks must be integers."));
     }
 
+    /*
+    Tests validation failure when the total credits across all modules do not sum to 120.
+    */
     @Test
     void testValidateModulesCreditsPerLevelFail() {
-        // Arrange
+        // Arrange: Create a list of modules where total credits are less than 120
         List<Module> modules = List.of(
                 new Module("Module1", 30, 50),
                 new Module("Module2", 30, 60) // Total credits < 120
         );
-        mockValidator.setCreditsPerLevelValid(false);
+        mockValidator.setCreditsPerLevelValid(false); // Simulate credits validation failure
 
-        // Act
-        boolean isValid = validationService.validateModules(modules, 5, feedback);
+        // Act: Validate the modules
+        boolean isValid = validationManager.validateModules(modules, 5, feedback);
 
-        // Assert
+        // Assert: Validation should fail, and feedback should contain the appropriate error message
         assertFalse(isValid);
         assertTrue(feedback.getLastMessage().contains("Error: Total credits must add up to 120."));
     }
 
+    /*
+    Tests successful validation when all modules meet the criteria.
+    */
     @Test
     void testValidateModulesAllValid() {
-        // Arrange
+        // Arrange: Create a list of valid modules
         List<Module> modules = List.of(
                 new Module("Module1", 60, 70),
                 new Module("Module2", 60, 80)
@@ -82,17 +102,21 @@ class ValidationServiceTest {
         mockValidator.setCategoricalMarksValid(true);
         mockValidator.setCreditsPerLevelValid(true);
 
-        // Act
-        boolean isValid = validationService.validateModules(modules, 5, feedback);
+        // Act: Validate the modules
+        boolean isValid = validationManager.validateModules(modules, 5, feedback);
 
-        // Assert
+        // Assert: Validation should pass, and feedback should be empty
         assertTrue(isValid);
         assertTrue(feedback.getLastMessage().isEmpty());
     }
 
+    /*
+    Tests validation failure when multiple criteria fail. Ensures the feedback
+    captures the first failure message.
+    */
     @Test
     void testValidateModulesMultipleFailures() {
-        // Arrange
+        // Arrange: Create a list of modules failing multiple criteria
         List<Module> modules = List.of(
                 new Module("Module1", 30, 35), // Fails pass marks
                 new Module("Module2", 30, 45.5) // Fails categorical marks
@@ -100,16 +124,18 @@ class ValidationServiceTest {
         mockValidator.setPassMarksValid(false);
         mockValidator.setCategoricalMarksValid(false);
 
-        // Act
-        boolean isValid = validationService.validateModules(modules, 5, feedback);
+        // Act: Validate the modules
+        boolean isValid = validationManager.validateModules(modules, 5, feedback);
 
-        // Assert
+        // Assert: Validation should fail, and feedback should capture the first failure message
         assertFalse(isValid);
-        // Ensure the first failure message is captured
         assertTrue(feedback.getLastMessage().contains("Error: All marks must be 40% or above to pass."));
     }
 
-    // Mock Validator Class for Testing
+    /*
+    Mock implementation of the Validator class, used to simulate validation behavior
+    without relying on the real implementation.
+    */
     private static class MockValidator extends Validator {
         private boolean passMarksValid = true;
         private boolean categoricalMarksValid = true;
@@ -143,8 +169,11 @@ class ValidationServiceTest {
         }
     }
 
-    // Test Implementation of ValidationFeedback
-    private static class TestValidationFeedback implements ValidationService.ValidationFeedback {
+    /*
+    Mock implementation of the ValidationFeedback interface.
+    Captures feedback messages for verification in tests.
+    */
+    private static class TestValidationFeedback implements ValidationManager.ValidationFeedback {
         private String lastMessage = "";
 
         @Override
