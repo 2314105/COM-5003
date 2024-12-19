@@ -32,47 +32,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.GradeCalculatorApp.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.MainFrame.executor": "Run",
-    "JUnit.AverageCalculatorTest.executor": "Run",
-    "JUnit.DatabaseManagerTest.executor": "Run",
-    "JUnit.DirectLevel6CalculatorTest.executor": "Run",
-    "JUnit.DirectLevel6CalculatorTest.testStudentDClassification.executor": "Run",
-    "JUnit.DirectLevel6CalculatorTest.testStudentEClassification.executor": "Run",
-    "JUnit.Level5Level6CalculatorTest.executor": "Run",
-    "JUnit.Level5Level6CalculatorTest.testScenario1.executor": "Run",
-    "JUnit.Level5Level6CalculatorTest.testScenario3.executor": "Run",
-    "JUnit.MarkClassifierTest.executor": "Run",
-    "JUnit.ModuleDataExtractorTest.executor": "Run",
-    "JUnit.ModuleTest.executor": "Run",
-    "JUnit.TableTest.executor": "Run",
-    "JUnit.ValidationManagerTest.executor": "Run",
-    "JUnit.ValidationServiceTest.executor": "Run",
-    "JUnit.ValidatorTest (1).executor": "Run",
-    "JUnit.ValidatorTest.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/joshuawhite/Code/Uni/COM-5003/Assessment 1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.GradeCalculatorApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainFrame.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AverageCalculatorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DatabaseManagerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DirectLevel6CalculatorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DirectLevel6CalculatorTest.testStudentDClassification.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DirectLevel6CalculatorTest.testStudentEClassification.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Level5Level6CalculatorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Level5Level6CalculatorTest.testScenario1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Level5Level6CalculatorTest.testScenario3.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MarkClassifierTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ModuleDataExtractorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ModuleTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TableTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ValidationManagerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ValidationServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ValidatorTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ValidatorTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/joshuawhite/Code/Uni/COM-5003/Assessment 1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ui" />
@@ -85,7 +85,7 @@
       <recent name="ui" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TableTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Assessment-1" />
@@ -93,7 +93,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ModuleDataExtractorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AverageCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assessment-1" />
       <extension name="coverage">
         <pattern>
@@ -102,7 +102,37 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.ModuleDataExtractorTest" />
+      <option name="MAIN_CLASS_NAME" value="model.AverageCalculatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DirectLevel6CalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assessment-1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.DirectLevel6CalculatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Level5Level6CalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assessment-1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.Level5Level6CalculatorTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,43 +153,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ValidationManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assessment-1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.ValidationManagerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ValidatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assessment-1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.ValidatorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TableTest" />
-        <item itemvalue="JUnit.ValidationManagerTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.ModuleDataExtractorTest" />
-        <item itemvalue="JUnit.ValidatorTest (1)" />
+        <item itemvalue="JUnit.Level5Level6CalculatorTest" />
+        <item itemvalue="JUnit.DirectLevel6CalculatorTest" />
+        <item itemvalue="JUnit.AverageCalculatorTest" />
+        <item itemvalue="JUnit.TableTest" />
       </list>
     </recent_temporary>
   </component>
@@ -187,7 +187,13 @@
       <workItem from="1734216190131" duration="27711000" />
       <workItem from="1734344186290" duration="830000" />
       <workItem from="1734346845135" duration="28049000" />
-      <workItem from="1734526269178" duration="41761000" />
+      <workItem from="1734526269178" duration="45408000" />
+      <workItem from="1734621306801" duration="1216000" />
+      <workItem from="1734631686093" duration="5608000" />
+      <workItem from="1734639620066" duration="88000" />
+      <workItem from="1734639718303" duration="59000" />
+      <workItem from="1734639786127" duration="6000" />
+      <workItem from="1734639797235" duration="2017000" />
     </task>
     <servers />
   </component>
@@ -215,5 +221,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
