@@ -5,54 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa034449-2d95-4c63-8842-8e365e58288f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Semester 2 Lesson 2/app/src/main/res/layout/activity_test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester 2 Lesson 1/calculator/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Semester 2 Lesson 1/calculator/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester 2 Lesson 1/myFirstApplication/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Semester 2 Lesson 1/myFirstApplication/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/.idea/deploymentTargetSelector.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/.idea/migrations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/androidTest/java/com/example/myfirstapplication/ExampleInstrumentedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/java/com/example/myfirstapplication/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/app/src/test/java/com/example/myfirstapplication/ExampleUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/gradle/libs.versions.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myFirstApplication/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Reflection on the Degree Classification Calculator App.docx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Reflection on the Degree Classification Calculator App.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/~$flection on the Degree Classification Calculator App.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semester 2 Lesson 2/Send Message Design/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Semester 2 Lesson 2/Send Message Design/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +202,9 @@
       <workItem from="1736281920676" duration="2718000" />
       <workItem from="1736371375901" duration="5778000" />
       <workItem from="1736519607992" duration="172000" />
-      <workItem from="1736770399342" duration="863000" />
+      <workItem from="1736770399342" duration="1380000" />
+      <workItem from="1736805785003" duration="36000" />
+      <workItem from="1736873720374" duration="449000" />
     </task>
     <servers />
   </component>
